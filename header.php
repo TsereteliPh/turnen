@@ -12,6 +12,9 @@
 <?php wp_body_open(); ?>
 
 <header class="header">
+	<div class="container header__container">
 
+	</div>
 </header>
+
 <main class="main">
