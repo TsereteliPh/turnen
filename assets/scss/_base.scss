@@ -1,0 +1,149 @@
+html {
+	box-sizing: border-box;
+	min-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	color: #132f44;
+	font-weight: 400;
+	font-size: 16px;
+	font-family: var(--font-primary);
+	background-color: #fcfcfc;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #fcfcfc;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #4c545d;
+	}
+}
+
+*:focus {
+	outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-top: 0;
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+
+	&.alignright {
+		float: right;
+		margin: 8px 0 8px 16px;
+		@include md() {
+			display: block;
+			float: unset;
+			margin: 2rem auto;
+		}
+	}
+
+	&.alignleft {
+		float: left;
+		margin: 8px 16px 8px 0;
+		@include md() {
+			display: block;
+			float: unset;
+			margin: 2rem auto;
+		}
+	}
+
+	&.aligncenter {
+		display: block;
+		margin: 1rem auto;
+	}
+}
+
+button {
+	cursor: pointer;
+
+	&:disabled {
+		cursor: auto;
+	}
+}
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+input[type="number"] {
+	appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	margin: 0;
+	appearance: none;
+}
+
+textarea {
+	resize: none;
+}
+
+figure {
+	margin: 0;
+}
+
+object {
+	pointer-events: none;
+}
+
+address {
+	font-style: normal;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+.container {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+	@include to(1470px) {
+		max-width: 100%;
+		margin-right: 0.75rem;
+		margin-left: 0.75rem;
+	}
+}
+
+.main {
+
+	&_inner {
+		padding-top: 84px;
+		@include md() {
+			padding-top: 12rem;
+		}
+
+		section:last-child {
+			padding-bottom: 150px;
+			@include md() {
+				padding-bottom: 5rem;
+			}
+		}
+	}
+}
