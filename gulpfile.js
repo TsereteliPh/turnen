@@ -37,7 +37,7 @@ function mainScripts() {
 // Server
 function serve() {
 	browserSync.init({
-		proxy: 'domen.loc'
+		proxy: 'turnen'
 	});
 }
 
