@@ -48,7 +48,7 @@
 				$whatsapp = get_field( 'whatsapp', 'options' );
 			?>
 
-			<div class="header__socials">
+			<div class="socials header__socials">
 				<?php if ( $phone ) : ?>
 					<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>">
 						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
