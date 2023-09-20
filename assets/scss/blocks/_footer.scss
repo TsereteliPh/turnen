@@ -1,3 +1,166 @@
 .footer {
+	position: relative;
 	margin-top: auto;
+	overflow: hidden;
+	box-shadow: 0 10px 40px rgba(#000, 0.3);
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: fit-content;
+		height: fit-content;
+		color: rgba(#ebf3ff, 0.5);
+		font-size: 306px;
+		font-family: var(--font-secondary);
+		line-height: 0.4;
+		text-transform: uppercase;
+		transform: translateX(-50%);
+		content: "Школа";
+
+		@include hg {
+			font-size: 240px;
+		}
+
+		@include md {
+			font-size: 185px;
+		}
+
+		@include xs {
+			font-size: 120px;
+			line-height: 0.6;
+		}
+	}
+
+	&__container {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 50px 0 70px;
+
+		@include hg {
+			padding: 40px 0;
+		}
+
+		@include md {
+			padding: 30px 0;
+		}
+
+		@include sm {
+			display: grid;
+			grid-template-columns: 70px 1fr 50px;
+			gap: 5px 30px;
+		}
+
+		@include xs {
+			gap: 5px 10px;
+		}
+	}
+
+	&__logo {
+		display: block;
+		flex-shrink: 0;
+		width: 70px;
+		height: 70px;
+		background: url(assets/images/logo-main.png) no-repeat 50% / cover;
+		cursor: pointer;
+		transition: var(--transition);
+
+		@include sm {
+			grid-row: 1/4;
+		}
+
+		@media (hover: hover) {
+
+			&:hover {
+				scale: 1.05;
+			}
+		}
+	}
+
+	&__policy,
+	&__public-offer {
+		color: var(--primary);
+		font-size: 18px;
+
+		@include lg {
+			font-size: 16px;
+		}
+
+		@include sm {
+			grid-column: 2/3;
+		}
+
+		@include xs {
+			font-size: 14px;
+		}
+
+		&:active {
+			opacity: 0.8;
+		}
+	}
+
+	&__policy {
+		max-width: 315px;
+
+		@include sm {
+			max-width: none;
+		}
+	}
+
+	&__public-offer {
+		max-width: 110px;
+
+		@include sm {
+			max-width: none;
+		}
+	}
+
+	&__socials {
+		color: var(--primary);
+
+		@include lg {
+			gap: 20px;
+		}
+
+		@include sm {
+			flex-direction: column;
+			grid-row: 1/4;
+			grid-column: 3/4;
+			gap: 5px;
+			align-self: start;
+			justify-content: space-between;
+		}
+
+		@include xs {
+			gap: 5px;
+		}
+
+		a {
+
+			@include lg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+
+	&__rights {
+		max-width: 200px;
+		font-size: 18px;
+
+		@include lg {
+			font-size: 16px;
+		}
+
+		@include sm {
+			grid-row: 3/4;
+			max-width: none;
+		}
+
+		@include xs {
+			font-size: 14px;
+		}
+	}
 }
