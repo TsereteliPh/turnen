@@ -25,9 +25,9 @@ function slideDown(elem) {
 
 function slideToggle(elem) {
 	if (elem.offsetHeight === 0) {
-		elem.style.height = `${elem.scrollHeight}px`;
+		elem.style.maxHeight = `${elem.scrollHeight}px`;
 	} else {
-		elem.style.height = 0;
+		elem.style.maxHeight = 0;
 	}
 }
 
@@ -315,3 +315,31 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		})
 	}
 })
+
+
+//Функционал блока .price
+
+const price = document.querySelector('.price');
+
+if (price) {
+	const priceBtns = price.querySelectorAll('.price__item-btn');
+
+	const priceBtnsClose = () => {
+		for (let btn of priceBtns) {
+			btn.classList.remove('active');
+			btn.nextElementSibling.style.maxHeight = 0;
+		}
+	}
+
+	priceBtns.forEach(btn => {
+		btn.addEventListener('click', function() {
+			if (this.classList.contains('active')) {
+				priceBtnsClose();
+			} else {
+				priceBtnsClose();
+				this.classList.add('active');
+				slideToggle(this.nextElementSibling);
+			}
+		})
+	});
+}
