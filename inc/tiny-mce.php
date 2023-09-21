@@ -15,6 +15,12 @@ function change_toolbar($args)
 			'classes' => 'article-ol',
 		],
 		[
+			'title' => 'Дефис слева',
+			'block' => 'div',
+			'classes' => 'st-hypten',
+			'wrapper' => true
+		],
+		[
 			'title' => 'Стиль текста',
 			'items' => [
 				[

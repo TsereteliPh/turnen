@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="header">
+<header class="header<?php echo ( is_front_page() ) ? ' header--index' : ''; ?>">
 	<div class="header__content">
 		<div class="container header__container">
 			<a href="<?php echo bloginfo( 'url' ); ?>" class="header__logo" aria-label="Логотип школы"></a>
@@ -71,4 +71,5 @@
 	</div>
 </header>
 
-<main class="main">
+<main class="main<?php echo ( is_front_page() ) ? ' main--index' : ''; ?>">
+	<?php if ( is_front_page() ) get_template_part( 'layouts/partials/welcome' ); ?>

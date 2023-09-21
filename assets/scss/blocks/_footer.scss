@@ -12,7 +12,6 @@
 		height: fit-content;
 		color: rgba(#ebf3ff, 0.5);
 		font-size: 306px;
-		font-family: var(--font-secondary);
 		line-height: 0.4;
 		text-transform: uppercase;
 		transform: translateX(-50%);
@@ -84,6 +83,7 @@
 	&__public-offer {
 		color: var(--primary);
 		font-size: 18px;
+		font-family: var(--font-secondary);
 
 		@include lg {
 			font-size: 16px;
@@ -155,6 +155,7 @@
 	&__rights {
 		max-width: 200px;
 		font-size: 18px;
+		font-family: var(--font-secondary);
 
 		@include lg {
 			font-size: 16px;

@@ -130,5 +130,33 @@ iframe {
 }
 
 .main {
-	margin-top: 200px;
+	margin-top: 136px;
+
+	@include hg {
+		margin-top: 103px;
+	}
+
+	@include md {
+		margin-top: 83px;
+	}
+
+	@include xs {
+		margin-top: 68px;
+	}
+
+	&--index {
+		margin-top: 0;
+
+		@include hg {
+			margin-top: 0;
+		}
+
+		@include md {
+			margin-top: 0;
+		}
+
+		@include xs {
+			margin-top: 0;
+		}
+	}
 }
