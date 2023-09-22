@@ -30,7 +30,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_65084dc121349',
 			'label' => 'Маркер на карте',
-			'name' => 'marker',
+			'name' => 'map',
 			'aria-label' => '',
 			'type' => 'yandex-map',
 			'instructions' => '',
@@ -272,7 +272,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1695051460,
+	'modified' => 1695398756,
 ));
 
 endif;
