@@ -35,33 +35,32 @@ if (!function_exists('adem_setup')) {
 	//	register thumbnails
 //	add_image_size('123x123', 123, 123, true);
 
-	//	register post types
-//	register_post_type('review', [
-//		'label' => null,
-//		'labels' => [
-//			'name' => 'Отзывы',
-//			'singular_name' => 'Отзыв',
-//			'add_new' => 'Добавить отзыв',
-//			'add_new_item' => 'Добавить отзыв',
-//			'edit_item' => 'Редактировать отзыв',
-//			'new_item' => 'Новый отзыв',
-//			'view_item' => 'Смотреть отзыв',
-//			'search_items' => 'Найти отзыв',
-//			'not_found' => 'Не найдено',
-//			'not_found_in_trash' => 'Не найдено в корзине',
-//			'menu_name' => 'Отзывы',
-//		],
-//		'public' => true,
-//		'show_in_menu' => true,
-//		'menu_position' => 21,
-//		'menu_icon' => 'dashicons-format-chat',
-//		'supports' => ['title', 'editor'],
-//		'taxonomies' => ['review_type'],
-//		'has_archive' => false,
-//		'rewrite' => true,
-//		'query_var' => true,
-//		'publicly_queryable' => false
-//	]);
+	register_post_type('coaches', [
+		'label' => null,
+		'labels' => [
+			'name' => 'Тренеры',
+			'singular_name' => 'Тренер',
+			'add_new' => 'Добавить нового тренера',
+			'add_new_item' => 'Добавить нового тренера',
+			'edit_item' => 'Редактировать информацию о тренере',
+			'new_item' => 'Добавить нового тренера',
+			'view_item' => 'Информация о тренере',
+			'search_items' => 'Найти тренера',
+			'not_found' => 'Не найдено',
+			'not_found_in_trash' => 'Не найдено в корзине',
+			'menu_name' => 'Тренеры',
+		],
+		'public' => true,
+		'show_in_menu' => true,
+		'menu_position' => 21,
+		'menu_icon' => 'dashicons-groups',
+		'supports' => ['title', 'thumbnail'],
+		'taxonomies' => ['coaches_type'],
+		'has_archive' => false,
+		'rewrite' => true,
+		'query_var' => true,
+		'publicly_queryable' => false
+	]);
 }
 
 add_action('after_setup_theme', 'adem_setup');
@@ -73,13 +72,11 @@ add_filter('use_widgets_block_editor', '__return_false');
 add_action('wp_enqueue_scripts', 'adem_scripts');
 function adem_scripts()
 {
-//	эти стили не убирай они отключают стандартные стили wp которые не нужны
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
 	wp_dequeue_style('wc-block-style');
 	wp_dequeue_style('global-styles');
 	wp_dequeue_style('classic-theme-styles');
-//	конец
 	wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/vendor/css/fancybox.css', array(), '4.0.31');
 	wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/vendor/js/fancybox.umd.js', array(), '4.0.31', true);
 	wp_enqueue_style('swiper', get_template_directory_uri() . '/assets/vendor/css/swiper-bundle.min.css', array(), '8.4.7');
@@ -87,6 +84,23 @@ function adem_scripts()
 	wp_enqueue_style('adem', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_enqueue_script('adem', get_template_directory_uri() . '/assets/js/main.min.js', array(), _S_VERSION, true);
 	wp_localize_script('adem', 'adem_ajax', array('url' => admin_url('admin-ajax.php')));
+}
+
+//ending of experience
+
+function endingExperience ($num) {
+	$number = substr($num, -2);
+
+	if ($number == 11) {
+		$ending = ' лет';
+	} else {
+		$number = substr($number, -1);
+
+		if ($number == 1) $ending = ' года';
+		if ($number != 1) $ending = ' лет';
+	}
+
+	echo $num . $ending;
 }
 
 // disable scale images
@@ -102,7 +116,6 @@ function adem_excerpt($limit, $ID = null)
 }
 
 require 'inc/acf.php';
-// пригодится для аякс загрузки постов
 require 'inc/load-more.php';
 require 'inc/mail.php';
 require 'inc/svg.php';
