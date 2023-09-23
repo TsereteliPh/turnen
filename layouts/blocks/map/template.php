@@ -14,7 +14,7 @@
 		</address>
 	</div>
 
-	<div id="map" class="map__holder">
+	<div class="map__wrapper">
 		<?php
 			$route = get_sub_field( 'route' );
 			if ( $route ) :
@@ -38,13 +38,15 @@
 				<button class="map__info-btn" type="button"></button>
 			</div>
 		<?php endif; ?>
+
+		<div id="map" class="map__holder"></div>
 	</div>
 
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <?php $map = get_field( 'map', 'options' ); ?>
     <script>
         document.addEventListener("DOMContentLoaded", function (e) {
-	        function init(){
+			function init(){
                 <?php if ($map) : ?>
                     <?php $map = json_decode($map, true); ?>
                     const map = new ymaps.Map('map', {
@@ -77,7 +79,7 @@
                 <?php endif; ?>
             }
 
-	        ymaps.ready(init);
+			ymaps.ready(init);
         });
     </script>
 </section>
