@@ -2,7 +2,7 @@
 	overflow: hidden;
 
 	&--ribbon {
-		background: url(assets/images/ribbon--blue.png) no-repeat calc(50% + 800px) -160px / 400px auto;
+		background: url(assets/images/ribbon--blue.png) no-repeat calc(50% + 760px) -160px / 400px auto;
 
 		@include lg {
 			background-position: calc(50% + 500px) -160px;
