@@ -1,0 +1,134 @@
+.album {
+	overflow: hidden;
+	background: url(assets/images/ribbon--blue.png) no-repeat left 25px / 700px auto;
+
+	@include lg {
+		background: none;
+	}
+
+	&__title {
+		color: rgba(#fff, 0.4);
+
+		@include xs {
+			font-size: 70px;
+		}
+	}
+
+	&__text {
+		position: relative;
+		z-index: var(--ui-index-1);
+		padding-top: 120px;
+		font-size: 30px;
+		text-align: center;
+
+		@include lg {
+			padding-top: 70px;
+		}
+
+		@include md {
+			padding-top: 55px;
+			font-size: 26px;
+		}
+
+		@include xs {
+			padding-top: 40px;
+			font-size: 22px;
+		}
+
+		span {
+			display: block;
+			margin-top: 10px;
+			font-size: 20px;
+			font-family: var(--font-secondary);
+
+			@include xs {
+				display: none;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 15px;
+		align-items: center;
+		justify-content: center;
+		margin-top: 30px;
+
+		@include xs {
+			gap: 10px;
+			margin-top: 20px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 70px;
+		padding: 20px 30px;
+		font-size: 18px;
+		font-family: var(--font-secondary);
+		border: 1px solid #fff;
+		border-radius: 35px;
+		cursor: pointer;
+		transition: var(--transition);
+
+		@include md {
+			min-height: 50px;
+			padding: 15px 20px;
+			font-size: 16px;
+		}
+
+		@media (hover: hover) {
+
+			&:hover {
+				box-shadow: 0 5px 5px rgba(#000, 0.1);
+				transform: translateY(-5px);
+			}
+		}
+
+		&.active {
+			color: var(--primary);
+			border-color: var(--primary);
+			cursor: default;
+
+			&:hover {
+				box-shadow: none;
+				transform: none;
+			}
+		}
+	}
+
+	&__gallery {
+		display: none;
+		margin-top: 50px;
+
+		@include md {
+			margin-top: 30px;
+		}
+
+		&.active {
+			display: grid;
+
+			.gallery__link {
+				animation: showIn 0.3s ease-out;
+			}
+		}
+	}
+}
+
+@keyframes showIn {
+
+	0% {
+		scale: 0.8;
+	}
+
+	80% {
+		scale: 1.02;
+	}
+
+	100% {
+		scale: 1;
+	}
+}

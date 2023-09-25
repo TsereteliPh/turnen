@@ -13,7 +13,8 @@ if (have_rows('blocks', $id)) {
 			$counters[$layout]++;
 		}
 
-		if (get_row_layout() == 'coaches') get_template_part('layouts/blocks/coaches/template');
+		if (get_row_layout() == 'album') get_template_part('layouts/blocks/album/template');
+		else if (get_row_layout() == 'coaches') get_template_part('layouts/blocks/coaches/template');
 		else if (get_row_layout() == 'map') get_template_part('layouts/blocks/map/template');
 		else if (get_row_layout() == 'medal') get_template_part('layouts/blocks/medal/template');
 		else if (get_row_layout() == 'price') get_template_part('layouts/blocks/price/template');
