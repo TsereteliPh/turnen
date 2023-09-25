@@ -1,3 +1,317 @@
 .coaches {
+	padding-bottom: 80px;
+	background:
+		linear-gradient(to bottom, var(--bg-primary) 0%, #ecf3fa 160px, #ecf3fa 160px, rgba(#ecf3fa, 0) 240px) no-repeat,
+		url(assets/images/coaches-bg.jpg) no-repeat 50% / cover;
 
+	@include hg {
+		padding-bottom: 50px;
+	}
+
+	@include xs {
+		background: url(assets/images/coaches-bg.jpg) no-repeat 50% / cover;;
+	}
+
+	&__title {
+		color: rgba(#fff, 0.6);
+
+		@include xs {
+			font-size: 72px;
+		}
+	}
+
+	&__text {
+		position: relative;
+		z-index: var(--ui-index-1);
+		padding-top: 50px;
+		font-size: 33px;
+		text-align: center;
+
+		@include hg {
+			font-size: 28px;
+		}
+
+		@include xs {
+			font-size: 22px;
+		}
+	}
+
+	&__slider {
+		position: relative;
+		margin: 30px 0;
+		padding: 0 20px;
+
+		@include sm {
+			margin: 20px 0 30px;
+			padding: 0 10px;
+		}
+	}
+
+	&__slider-wrapper {
+		padding: 15px 35px;
+		background-color: var(--primary);
+		border-radius: 30px;
+	}
+
+	&__slider-item {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		cursor: pointer;
+		transition: var(--transition);
+
+		@include xs {
+			justify-content: center;
+		}
+
+		@media (hover: hover) {
+
+			&:hover {
+				transform: translateY(-5px);
+			}
+		}
+	}
+
+	&__slider-img {
+		width: 115px;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		border-radius: 50%;
+
+		@include sm {
+			width: 90px;
+		}
+	}
+
+	&__slider-name {
+		color: var(--fc-light);
+		font-size: 16px;
+	}
+
+	&__slider-experience {
+		display: flex;
+		gap: 7px;
+		margin-top: 8px;
+		color: #d9d9d9;
+		font-size: 14px;
+		font-family: var(--font-secondary);
+
+		span {
+			position: relative;
+			width: 14px;
+			height: 14px;
+			margin-top: 2px;
+			border: 1px solid rgba(#ffb342, 0.5);
+			border-radius: 50%;
+
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 8px;
+				height: 8px;
+				background: var(--gradient) no-repeat 50% / cover;
+				border-radius: 50%;
+				transform: translate(-50%, -50%);
+				content: "";
+			}
+		}
+	}
+
+	&__slider-pagination.swiper-pagination {
+		bottom: -35px;
+		--swiper-theme-color: var(--primary);
+	}
+
+	&__person {
+		margin-top: 70px;
+		padding: 0 20px;
+
+		@include lg {
+			margin-top: 50px;
+		}
+
+		@include sm {
+			padding: 0;
+		}
+	}
+
+	&__person-item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		opacity: 0 !important;
+
+		@include hg {
+			gap: 40px;
+		}
+
+		@include sm {
+			gap: 40px 20px;
+		}
+
+		@include xs {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		&.swiper-slide-active {
+			opacity: 1 !important;
+
+			.coaches__gallery {
+				display: block;
+			}
+		}
+	}
+
+	&__person-img {
+		width: 400px;
+		margin-left: auto;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		border-radius: 50%;
+
+		@include hg {
+			width: 350px;
+		}
+
+		@include md {
+			width: 300px;
+		}
+
+		@include md {
+			width: 100%;
+		}
+
+		@include xs {
+			max-width: 225px;
+			margin: 0 auto;
+		}
+	}
+
+	&__person-info {
+		align-self: center;
+	}
+
+	&__person-job {
+		font-size: 16px;
+		font-family: var(--font-secondary);
+
+		@include xs {
+			font-size: 12px;
+			text-align: center;
+		}
+	}
+
+	&__person-name {
+		margin-bottom: 0;
+		font-size: 28px;
+
+		@include sm {
+			font-size: 22px;
+		}
+
+		@include xs {
+			text-align: center;
+		}
+	}
+
+	&__person-experience {
+		max-width: 285px;
+		margin-top: 30px;
+		padding: 10px 15px;
+		color: var(--fc-light);
+		font-weight: 400;
+		font-size: 18px;
+		font-family: var(--font-secondary);
+		line-height: 1.2;
+		background-color: #9079a0;
+		border-radius: 15px;
+
+		@include sm {
+			max-width: 250px;
+			font-size: 16px;
+		}
+
+		@include xs {
+			margin: 15px auto 0;
+		}
+	}
+
+	&__person-achievements {
+		display: flex;
+		gap: 20px;
+		max-width: 300px;
+		margin-top: 30px;
+		font-size: 18px;
+		font-family: var(--font-secondary);
+
+		@include sm {
+			max-width: 250px;
+			font-size: 16px;
+		}
+
+		@include xs {
+			margin: 15px auto 0;
+		}
+
+		span {
+			display: flex;
+			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			background-color: var(--secondary);
+			border-radius: 50%;
+		}
+	}
+
+	&__gallery {
+		position: relative;
+		display: none;
+		grid-column: 1/3;
+		padding: 0 35px;
+
+		@include sm {
+			padding: 0 10px;
+		}
+
+		@include xs {
+			margin-top: 20px;
+		}
+	}
+
+	&__gallery-item {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 3/2;
+		overflow: hidden;
+		border-radius: 15px;
+		cursor: pointer;
+		pointer-events: all;
+
+		@include md {
+			aspect-ratio: 16/9;
+		}
+
+		@media (hover: hover) {
+
+			&:hover {
+
+				img {
+					scale: 1.02;
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--transition);
+		}
+	}
 }

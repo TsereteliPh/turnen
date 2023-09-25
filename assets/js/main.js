@@ -254,37 +254,72 @@ try {
 
 //Swiper
 
-//Слайдер blocks/rest
+// Слайдер .coaches
 
-const restCarousel = document.querySelector(".rest__wrapper");
+const coaches = document.querySelector('.coaches');
 
-if (restCarousel) {
-	let papersSwiper = new Swiper(restCarousel, {
+if (coaches) {
+	let thumbCoachesSlider = new Swiper('.coaches__slider-wrapper', {
+		spaceBetween: 40,
+		slidesPerView: 1,
+		watchSlidesProgress: true,
 		navigation: {
-			nextEl: ".rest__next",
-			prevEl: ".rest__prev",
+			nextEl: '.coaches__slider-next',
+            prevEl: '.coaches__slider-prev',
+		},
+		pagination: {
+			el: '.coaches__slider-pagination',
+            clickable: true,
 		},
 		breakpoints: {
-			1440: {
+			1280: {
 				slidesPerView: 4,
-				centeredSlides: false,
+				spaceBetween: 20
 			},
 			992: {
 				slidesPerView: 3,
-				centeredSlides: false,
-			},
-			769: {
-				slidesPerView: 2,
-				centeredSlides: false,
 			},
 			577: {
-				centeredSlides: false,
-			},
-		},
-		slidesPerView: "auto",
-		centeredSlides: true,
-		spaceBetween: 25,
+				slidesPerView: 2,
+			}
+		}
 	});
+
+	let bigCoachesSlider = new Swiper('.coaches__person', {
+		slidesPerView: 1,
+		effect: 'fade',
+		spaceBetween: 0,
+		allowTouchMove: false,
+		thumbs: {
+			swiper: thumbCoachesSlider,
+		}
+	});
+
+	let coachesGallery = coaches.querySelectorAll('.coaches__gallery-wrapper');
+
+	if (coachesGallery) {
+		coachesGallery.forEach(gallery => {
+			let coachesGallerySlider = new Swiper(gallery, {
+				spaceBetween: 18,
+				slidesPerView: 1,
+				navigation: {
+					nextEl: '.coaches__gallery-next',
+					prevEl: '.coaches__gallery-prev',
+				},
+				breakpoints: {
+					992: {
+						slidesPerView: 4,
+					},
+					769: {
+                        slidesPerView: 3,
+                    },
+					577: {
+                        slidesPerView: 2,
+                    }
+				}
+			})
+		});
+	}
 }
 
 // Функционал шапки сайта

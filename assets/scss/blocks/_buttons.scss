@@ -76,6 +76,96 @@
 	}
 }
 
+.btn-prev,
+.btn-next {
+	position: absolute;
+	top: 50%;
+	z-index: var(--ui-index-1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 65px;
+	height: 65px;
+	padding: 0;
+	background: #fff;
+	border: none;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	transition: var(--transition);
+
+	@include hg {
+		width: 50px;
+		height: 50px;
+	}
+
+	@include xs {
+		width: 40px;
+		height: 40px;
+	}
+
+	&:active {
+		background: #f0f0f0;
+	}
+
+	&.swiper-button-disabled {
+		cursor: default;
+
+		svg {
+			opacity: 0.3;
+		}
+
+		&:hover {
+
+			svg {
+				transform: none;
+			}
+		}
+
+		&:active {
+			background: #fff;
+		}
+	}
+
+	svg {
+		color: var(--secondary);
+		transition: var(--transition);
+
+		@include xs {
+			width: 18px;
+			height: auto;
+		}
+	}
+}
+
+.btn-prev {
+	left: 0;
+
+	@media (hover: hover) {
+
+		&:hover {
+
+			svg {
+				transform: translateX(-10px);
+			}
+		}
+	}
+}
+
+.btn-next {
+	right: 0;
+
+	@media (hover: hover) {
+
+		&:hover {
+
+			svg {
+				transform: translateX(10px);
+			}
+		}
+	}
+}
+
 @keyframes pulse {
 
 	0% {

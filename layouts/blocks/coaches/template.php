@@ -36,7 +36,10 @@
 								<div class="coaches__slider-info">
 									<div class="coaches__slider-name"><?php the_title(); ?></div>
 
-									<div class="coaches__slider-experience">Стаж более <?php endingExperience( get_field( 'experience' ) ); ?></div>
+									<div class="coaches__slider-experience">
+										<span></span>
+										Стаж более <?php endingExperience( get_field( 'experience' ) ); ?>
+									</div>
 								</div>
 							</li>
 						<?php
@@ -44,8 +47,6 @@
 							wp_reset_postdata();
 						?>
 					</ul>
-
-					<div class="coaches__slider-pagination swiper-pagination"></div>
 				</div>
 
 				<div class="btn-prev coaches__slider-prev">
@@ -55,6 +56,8 @@
 				<div class="btn-next coaches__slider-next">
 					<svg width="24" height="16"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
 				</div>
+
+				<div class="coaches__slider-pagination swiper-pagination"></div>
 			</div>
 
 			<div class="coaches__person swiper">
@@ -94,32 +97,32 @@
 										<?php the_field( 'achievements' );?>
 									</div>
 								<?php endif; ?>
+                            </div>
 
-								<?php
-									$gallery = get_field( 'gallery', $post );
-									if ( $gallery ) :
-								?>
-									<div class="coaches__gallery">
-										<div class="coaches__gallery-wrapper swiper">
-											<div class="coaches__gallery-list swiper-wrapper">
-												<?php foreach ( $gallery as $item ) : ?>
-													<a href="<?php echo $item['url']; ?>" class="coaches__gallery-item swiper-slide" data-fancybox="coach-gallery-<?php echo $post; ?>">
-														<?php echo wp_get_attachment_image( $item['id'], 'medium', false ); ?>
-													</a>
-												<?php endforeach; ?>
-											</div>
-										</div>
-
-										<div class="btn-prev coaches__gallery-prev">
-											<svg width="24" height="16"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-left"></use></svg>
-										</div>
-
-										<div class="btn-next coaches__gallery-next">
-											<svg width="24" height="16"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
+							<?php
+								$gallery = get_field( 'gallery', $post );
+								if ( $gallery ) :
+							?>
+								<div class="coaches__gallery">
+									<div class="coaches__gallery-wrapper swiper">
+										<div class="coaches__gallery-list swiper-wrapper">
+											<?php foreach ( $gallery as $item ) : ?>
+												<a href="<?php echo $item['url']; ?>" class="coaches__gallery-item swiper-slide" data-fancybox="coach-gallery-<?php echo $post; ?>">
+													<?php echo wp_get_attachment_image( $item['id'], 'medium', false ); ?>
+												</a>
+											<?php endforeach; ?>
 										</div>
 									</div>
-								<?php endif; ?>
-                            </div>
+
+									<div class="btn-prev coaches__gallery-prev">
+										<svg width="24" height="16"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-left"></use></svg>
+									</div>
+
+									<div class="btn-next coaches__gallery-next">
+										<svg width="24" height="16"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-right"></use></svg>
+									</div>
+								</div>
+							<?php endif; ?>
 						</li>
 					<?php
 						endforeach;
