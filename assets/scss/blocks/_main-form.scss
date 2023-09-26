@@ -1,0 +1,91 @@
+.main-form {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-width: 480px;
+	margin-bottom: 120px;
+	padding: 40px 60px 120px;
+	background: var(--primary);
+	border-radius: 20px;
+
+	@include hg {
+		margin-bottom: 90px;
+		padding: 30px 60px 100px;
+	}
+
+	&::before {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
+		border: 1px solid #d9d9d9;
+		border-radius: 20px;
+		content: "";
+		pointer-events: none;
+	}
+
+	&__title {
+		margin: 0;
+		color: var(--fc-light);
+		font-size: 30px;
+
+		@include sm {
+			font-size: 26px;
+		}
+
+		@include xs {
+			font-size: 22px;
+		}
+	}
+
+	&__text {
+		color: var(--fc-light);
+		font-weight: 400;
+		font-size: 14px;
+		font-family: var(--font-secondary);
+		line-height: 1.4;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__textarea {
+		min-height: 120px;
+
+		@include xs {
+			min-height: 90px;
+		}
+	}
+
+	&__submit {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin: 0;
+		transform: translate(-50%, 55%);
+
+		@include hg {
+			margin: 0;
+		}
+	}
+
+	&__policy {
+		color: var(--fc-light);
+		font-weight: 400;
+		font-size: 14px;
+		font-family: var(--font-secondary);
+
+		@include xs {
+			font-size: 12px;
+		}
+
+		a {
+			color: #8ebbff;
+		}
+	}
+}

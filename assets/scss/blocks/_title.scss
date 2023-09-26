@@ -11,6 +11,7 @@
 	white-space: nowrap;
 	text-transform: uppercase;
 	transform: translateX(-50%);
+	user-select: none;
 
 	@include hg {
 		font-size: 175px;
@@ -29,6 +30,6 @@
 	}
 
 	@include xs {
-		font-size: 50px;
+		font-size: 70px;
 	}
 }

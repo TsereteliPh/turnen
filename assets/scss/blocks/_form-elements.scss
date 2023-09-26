@@ -1,0 +1,22 @@
+.input {
+	width: 100%;
+	min-height: 50px;
+	padding: 15px 20px;
+	color: var(--fc-primary);
+	font-size: 14px;
+	font-family: var(--font-secondary);
+	background: #fff;
+	border: 2px solid transparent;
+	border-radius: 25px;
+	transition: var(--transition);
+
+	@include xs {
+		min-height: 40px;
+		padding: 10px 15px;
+	}
+
+	&:hover,
+	&:focus {
+		border: 2px solid var(--secondary);
+	}
+}
