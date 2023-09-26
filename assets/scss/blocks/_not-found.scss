@@ -1,0 +1,15 @@
+.not-found {
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 50vh;
+	}
+
+	&__text {
+		max-width: 500px;
+		font-size: 18px;
+		font-family: var(--font-secondary);
+	}
+}
