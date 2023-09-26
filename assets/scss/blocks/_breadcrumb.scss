@@ -1,0 +1,46 @@
+.breadcrumb {
+	position: absolute;
+	top: 160px;
+	left: 0;
+	width: 100%;
+
+	@include hg {
+		top: 120px;
+	}
+
+	@include md {
+		top: 100px;
+	}
+
+	@include xs {
+		top: 85px;
+	}
+
+	span {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		font-size: 20px;
+		font-family: var(--font-secondary);
+
+		@include md {
+			gap: 18px;
+		}
+
+		@include sm {
+			font-size: 16px;
+		}
+
+		@include xs {
+			font-size: 14px;
+		}
+
+		span {
+
+			a {
+				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
+}
