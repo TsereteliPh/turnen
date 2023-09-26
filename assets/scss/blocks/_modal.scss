@@ -1,17 +1,47 @@
-.main-form {
-	position: relative;
-	display: flex;
+.modal {
+	display: none;
 	flex-direction: column;
 	gap: 15px;
 	max-width: 480px;
 	margin-bottom: 120px;
 	padding: 40px 60px 120px;
+	color: var(--fc-light);
+	text-align: center;
 	background: var(--primary);
 	border-radius: 20px;
 
 	@include hg {
 		margin-bottom: 90px;
 		padding: 30px 60px 100px;
+	}
+
+	&--success {
+		align-items: center;
+		padding: 60px 80px;
+		text-align: center;
+
+		@include hg {
+			padding: 30px 60px;
+		}
+
+		svg {
+			@include xs {
+				width: 80px;
+				height: auto;
+			}
+		}
+
+		.modal__title {
+			margin-top: 20px;
+		}
+
+		.modal__text {
+			font-size: 18px;
+
+			@include xs {
+				font-size: 14px;
+			}
+		}
 	}
 
 	&::before {
@@ -28,7 +58,6 @@
 
 	&__title {
 		margin: 0;
-		color: var(--fc-light);
 		font-size: 30px;
 
 		@include sm {
@@ -41,7 +70,6 @@
 	}
 
 	&__text {
-		color: var(--fc-light);
 		font-weight: 400;
 		font-size: 14px;
 		font-family: var(--font-secondary);
@@ -75,7 +103,6 @@
 	}
 
 	&__policy {
-		color: var(--fc-light);
 		font-weight: 400;
 		font-size: 14px;
 		font-family: var(--font-secondary);

@@ -63,24 +63,24 @@
 			</div>
 		</div>
 
-		<div class="main-form contacts__form">
-			<h3 class="main-form__title">Приходите к нам</h3>
+		<div class="modal contacts__form">
+			<h3 class="modal__title">Приходите к нам</h3>
 
 			<?php if ( get_sub_field( 'text' ) ) : ?>
-				<div class="main-form__text"><?php the_sub_field( 'text' ); ?></div>
+				<div class="modal__text"><?php the_sub_field( 'text' ); ?></div>
 			<?php endif; ?>
 
-			<form method="POST" class="main-form__form">
+			<form method="POST" class="modal__form">
 				<input type="text" class="input" name="client_name" placeholder="Ваше имя" required>
 
 				<input type="tel" class="input" name="client_phone" placeholder="Ваш телефон" required>
 
-				<textarea class="input main-form__textarea" name="client_message" placeholder="Время и дата для связи и комментарий"></textarea>
+				<textarea class="input modal__textarea" name="client_message" placeholder="Время и дата для связи и комментарий"></textarea>
 
-				<button class="btn-circle main-form__submit" type="submit">Отправить</button>
+				<button class="btn-circle modal__submit" type="submit">Отправить</button>
 			</form>
 
-			<div class="main-form__policy">
+			<div class="modal__policy">
 				Нажимая на кнопку ниже, вы соглашаетесь
 				<a href="<?php echo get_privacy_policy_url(); ?>" target="_blank">с условиями передачи данных</a>
 			</div>

@@ -148,8 +148,11 @@
 	}
 
 	&__form {
+		position: relative;
 		z-index: var(--ui-index-1);
+		display: flex;
 		margin-left: auto;
+		text-align: left;
 
 		@include md {
 			padding: 30px 40px 100px;

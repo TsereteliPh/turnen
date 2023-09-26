@@ -31,6 +31,6 @@
 			</ul>
 		<?php endif; ?>
 
-		<button class="btn-circle price__button" type="button">Узнать расписание занятий</button>
+		<button class="btn-circle price__button" type="button" data-fancybox data-src="#callback">Узнать расписание занятий</button>
 	</div>
 </section>
