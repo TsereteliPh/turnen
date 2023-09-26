@@ -7,6 +7,12 @@
 		padding-bottom: 20px;
 	}
 
+	&__title {
+		@include xs {
+			font-size: 60px;
+		}
+	}
+
 	&__label {
 		padding-top: 80px;
 		color: var(--fc-light);

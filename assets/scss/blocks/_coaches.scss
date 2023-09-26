@@ -14,10 +14,6 @@
 
 	&__title {
 		color: rgba(#fff, 0.6);
-
-		@include xs {
-			font-size: 72px;
-		}
 	}
 
 	&__text {

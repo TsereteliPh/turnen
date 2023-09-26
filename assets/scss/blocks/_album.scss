@@ -8,10 +8,6 @@
 
 	&__title {
 		color: rgba(#fff, 0.4);
-
-		@include xs {
-			font-size: 70px;
-		}
 	}
 
 	&__text {
