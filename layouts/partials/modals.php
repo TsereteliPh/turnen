@@ -11,10 +11,14 @@
 
 	<div class="modal__text">Готовы ответить на все ваши вопросы или предоставить дополнительную информацию по вашему запросу.</div>
 
-	<form method="POST" class="modal__form">
+	<form method="POST" class="modal__form" name="Звонок">
+		<?php wp_nonce_field( 'Звонок', 'callback_input' ); ?>
+
+		<input type="text" class="hidden" name="page_request" value="<?php echo get_the_title(); ?>">
+
 		<input type="text" class="input" name="client_name" placeholder="Ваше имя" required>
 
-		<input type="tel" class="input" name="client_phone" placeholder="Ваш телефон" required>
+		<input type="tel" class="input" name="client_tel" placeholder="Ваш телефон" required>
 
 		<button class="btn-circle modal__submit" type="submit">Отправить</button>
 	</form>

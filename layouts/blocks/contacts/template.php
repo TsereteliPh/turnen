@@ -70,10 +70,14 @@
 				<div class="modal__text"><?php the_sub_field( 'text' ); ?></div>
 			<?php endif; ?>
 
-			<form method="POST" class="modal__form">
+			<form method="POST" class="modal__form" name="Контакты">
+				<?php wp_nonce_field( 'Контакты', 'contacts_input' ); ?>
+
+				<input type="text" class="hidden" name="page_request" value="<?php echo get_the_title(); ?>">
+
 				<input type="text" class="input" name="client_name" placeholder="Ваше имя" required>
 
-				<input type="tel" class="input" name="client_phone" placeholder="Ваш телефон" required>
+				<input type="tel" class="input" name="client_tel" placeholder="Ваш телефон" required>
 
 				<textarea class="input modal__textarea" name="client_message" placeholder="Время и дата для связи и комментарий"></textarea>
 

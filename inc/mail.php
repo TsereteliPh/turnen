@@ -124,7 +124,9 @@ add_action("wp_ajax_send_mail", "send_mail");
 add_action("wp_ajax_nopriv_send_mail", "send_mail");
 function send_mail()
 {
-	if (empty($_POST['form_name']) || empty($_POST['page_request'])) exit;
+	if ( empty($_POST['form_name']) || empty($_POST['page_request']) ) exit;
+	if ( $_POST['form_name'] == 'Звонок' && !wp_verify_nonce( $_POST['callback_input'], $_POST['form_name'] ) ) exit;
+	if ( $_POST['form_name'] == 'Контакты' && !wp_verify_nonce( $_POST['contacts_input'], $_POST['form_name'] ) ) exit;
 
 	$form_name = $_POST['form_name'];
 	$mail = '';
