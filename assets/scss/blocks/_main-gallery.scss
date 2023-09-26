@@ -1,0 +1,15 @@
+.main-gallery {
+	margin: 20px 0 100px;
+
+	@include md {
+		margin: 20px 0 40px;
+	}
+
+	&__gallery {
+		margin-top: 35px;
+
+		@include xs {
+			margin-top: 20px;
+		}
+	}
+}
