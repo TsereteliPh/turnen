@@ -1,4 +1,4 @@
-<section class="contacts">
+<section class="contacts" id="contacts">
 	<div class="container contacts__container">
 		<?php get_template_part('/layouts/partials/title', null, array(
 			'class' => 'contacts__title',

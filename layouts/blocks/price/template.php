@@ -1,4 +1,4 @@
-<section class="price">
+<section class="price" id="price">
 	<div class="container">
         <?php get_template_part('/layouts/partials/title', null, array(
             'class' => 'price__title',

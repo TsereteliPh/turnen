@@ -1,5 +1,5 @@
 <?php $albums = get_sub_field( 'albums' ); ?>
-<section class="album">
+<section class="album" id="album">
 	<div class="container">
 		<?php get_template_part('/layouts/partials/title', null, array(
 			'class' => 'album__title',

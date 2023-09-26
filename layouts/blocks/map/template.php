@@ -1,4 +1,4 @@
-<section class="map">
+<section class="map" id="map-block">
 	<div class="container map__container">
 		<div class="map__label">
 			<h2 class="map__title">Как до нас добраться</h2>
