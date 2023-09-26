@@ -30,6 +30,7 @@
 					<div class="st-hypten contacts__socials-wrapper">
 						<a href="https://t.me/<?php echo $telegram['link']; ?>" target="_blank">
 							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
+							<?php echo preg_replace('/[^0-9,+]/', '', $telegram['link']); ?>
 						</a>
 
 						<div class="contacts__socials-desc"><?php echo $telegram['desc']; ?></div>
@@ -40,6 +41,7 @@
 					<div class="st-hypten contacts__socials-wrapper">
 						<a href="https://wa.me/<?php echo $whatsapp['link']; ?>" target="_blank">
 							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
+							<?php echo $whatsapp['link']; ?>
 						</a>
 
 						<div class="contacts__socials-desc"><?php echo $whatsapp['desc']; ?></div>

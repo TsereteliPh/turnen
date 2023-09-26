@@ -134,14 +134,84 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 			'sub_fields' => array(
 				array(
+					'key' => 'field_65128bbb9b5bb',
+					'label' => 'Тип ссылки',
+					'name' => 'type',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '15',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'link' => 'Имя пользователя',
+						'number' => 'Номер',
+					),
+					'default_value' => false,
+					'return_format' => 'value',
+					'multiple' => 0,
+					'max' => '',
+					'prepend' => '',
+					'append' => '',
+					'allow_null' => 0,
+					'ui' => 0,
+					'acfe_field_group_condition' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'allow_custom' => 0,
+					'search_placeholder' => '',
+					'min' => '',
+				),
+				array(
 					'key' => 'field_65084fa9c2fe5',
-					'label' => 'Ссылка на соцсеть',
+					'label' => 'Имя пользователя',
 					'name' => 'link',
 					'aria-label' => '',
 					'type' => 'text',
-					'instructions' => 'Добавить либо имя пользователя без "собаки" (Username), либо номер телефона (+71234567890)',
+					'instructions' => 'Введите имя пользователя. Пример: @Username',
 					'required' => 0,
-					'conditional_logic' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_65128bbb9b5bb',
+								'operator' => '==',
+								'value' => 'link',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'acfe_field_group_condition' => 0,
+				),
+				array(
+					'key' => 'field_65128bb79b5ba',
+					'label' => 'Номер',
+					'name' => 'number',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => 'Введите номер телефона в произвольной форме. Пример: +7 (123) 456 78 90',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_65128bbb9b5bb',
+								'operator' => '==',
+								'value' => 'number',
+							),
+						),
+					),
 					'wrapper' => array(
 						'width' => '20',
 						'class' => '',
@@ -205,7 +275,7 @@ acf_add_local_field_group(array(
 					'name' => 'link',
 					'aria-label' => '',
 					'type' => 'text',
-					'instructions' => 'Укажите номер телефона. Пример: +71234567890',
+					'instructions' => 'Укажите номер телефона в произвольной форме. Пример: +7 (123) 456 78 90',
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -272,7 +342,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1695398756,
+	'modified' => 1695714482,
 ));
 
 endif;

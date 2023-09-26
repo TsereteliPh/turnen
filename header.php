@@ -50,19 +50,26 @@
 
 			<div class="socials header__socials">
 				<?php if ( $phone ) : ?>
-					<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>">
+					<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
 						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
 					</a>
 				<?php endif; ?>
 
-				<?php if ( $telegram ) : ?>
-					<a href="https://t.me/<?php echo $telegram['link']; ?>" target="_blank">
+				<?php
+					if ( $telegram ) :
+					if ( $telegram['type'] == 'link' ) {
+						$tgLink = preg_replace('/@/', '', $telegram['link']);
+					} else {
+						$tgLink = preg_replace('/[^0-9,+]/', '', $telegram['number']);
+					}
+				?>
+					<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" aria-label="Ссылка на Telegram">
 						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
 					</a>
 				<?php endif; ?>
 
 				<?php if ( $whatsapp ) : ?>
-					<a href="https://wa.me/<?php echo $whatsapp['link']; ?>" target="_blank">
+					<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" target="_blank" aria-label="Ссылка на WhatsApp">
 						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
 					</a>
 				<?php endif; ?>
