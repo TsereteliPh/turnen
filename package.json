@@ -30,6 +30,6 @@
   "dependencies": {
     "@fancyapps/ui": "^4.0.26",
     "normalize.css": "^8.0.1",
-    "swiper": "^8.1.0"
+    "swiper": "^10.0.0"
   }
 }
