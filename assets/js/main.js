@@ -234,6 +234,19 @@ try {
 
 const coaches = document.querySelector('.coaches');
 
+const thumbCoachesSwitcher = function (thumbs, slides) {
+	if (window.innerWidth > 576) return;
+
+	for (let i = 0; i < thumbs.slides.length; i++) {
+		if (i !== thumbs.activeIndex) {
+			thumbs.slides[i].classList.remove('swiper-slide-thumb-active');
+        } else {
+			thumbs.slides[i].classList.add('swiper-slide-thumb-active');
+			slides.slideTo(i)
+        }
+	}
+}
+
 if (coaches) {
 	let thumbCoachesSlider = new Swiper('.coaches__slider-wrapper', {
 		spaceBetween: 40,
@@ -258,12 +271,18 @@ if (coaches) {
 			577: {
 				slidesPerView: 2,
 			}
+		},
+		on: {
+			activeIndexChange: function() {
+				thumbCoachesSwitcher(this, bigCoachesSlider);
+			}
 		}
 	});
 
 	let bigCoachesSlider = new Swiper('.coaches__person', {
 		slidesPerView: 1,
 		effect: 'fade',
+		speed: 500,
 		spaceBetween: 0,
 		allowTouchMove: false,
 		thumbs: {
