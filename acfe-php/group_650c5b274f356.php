@@ -33,7 +33,7 @@ acf_add_local_field_group(array(
 			'label' => 'Медаль',
 			'name' => 'medal',
 			'aria-label' => '',
-			'type' => 'true_false',
+			'type' => 'button_group',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -42,12 +42,14 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'message' => '',
-			'default_value' => 0,
-			'style' => '',
-			'ui_on_text' => 'Серебро',
-			'ui_off_text' => 'Золото',
-			'ui' => 1,
+			'choices' => array(
+				'gold' => 'Золотая',
+				'silver' => 'Серебряная',
+			),
+			'default_value' => '',
+			'return_format' => 'value',
+			'allow_null' => 0,
+			'layout' => 'horizontal',
 			'acfe_field_group_condition' => 0,
 		),
 		array(
@@ -135,7 +137,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1695383377,
+	'modified' => 1695811018,
 ));
 
 endif;

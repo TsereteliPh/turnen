@@ -1,11 +1,10 @@
 <?php
-	$medal = 'gold';
-	if ( get_sub_field( 'medal' ) ) $medal = 'silver';
+	$medal = get_sub_field( 'medal' );
 	$text = get_sub_field( 'text' );
 	$tagline = get_sub_field( 'tagline' );
 ?>
 
-<section class="medal<?php echo ( get_sub_field( 'medal' ) ) ? ' medal--ribbon' : ''; ?>">
+<section class="medal<?php echo ( $medal == 'silver' ) ? ' medal--ribbon' : ''; ?>">
 	<div class="container medal__container<?php echo ( get_sub_field( 'indent' ) ) ? ' medal__container--indent' : ''; ?>">
 
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/medal--<?php echo $medal; ?>.png" alt="Серебрянная медаль школы turnen" width="435" height="325">
