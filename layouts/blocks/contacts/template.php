@@ -86,7 +86,7 @@
 
 			<div class="modal__policy">
 				Нажимая на кнопку ниже, вы соглашаетесь
-				<a href="<?php echo get_privacy_policy_url(); ?>" target="_blank">с условиями передачи данных</a>
+				<a href="<?php echo get_privacy_policy_url(); ?>" target="_blank">с&nbsp;условиями передачи данных</a>
 			</div>
 		</div>
 	</div>
