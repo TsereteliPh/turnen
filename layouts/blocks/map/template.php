@@ -1,4 +1,4 @@
-<section class="map" id="map-block">
+<section class="map" id="map">
 	<div class="container map__container">
 		<div class="map__label">
 			<h2 class="map__title">Как до нас добраться</h2>
@@ -39,7 +39,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div id="map" class="map__holder"></div>
+		<div id="map-holder" class="map__holder"></div>
 	</div>
 
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
@@ -49,7 +49,7 @@
 			function init(){
                 <?php if ($map) : ?>
                     <?php $map = json_decode($map, true); ?>
-                    const map = new ymaps.Map('map', {
+                    const map = new ymaps.Map('map-holder', {
                         center: [<?php echo $map['center_lat'] ?>,<?php echo $map['center_lng'] ?>],
                         zoom: <?php echo $map['zoom']; ?>
                     });
