@@ -279,8 +279,8 @@ if (coaches) {
 				spaceBetween: 18,
 				slidesPerView: 1,
 				navigation: {
-					nextEl: '.coaches__gallery-next',
-					prevEl: '.coaches__gallery-prev',
+					nextEl: gallery.parentNode.querySelector('.coaches__gallery-next'),
+					prevEl: gallery.parentNode.querySelector('.coaches__gallery-prev'),
 				},
 				breakpoints: {
 					992: {
