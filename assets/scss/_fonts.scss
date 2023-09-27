@@ -43,8 +43,8 @@
 	font-family: Manrope;
 	font-style: normal;
 	src:
-		url(assets/fonts/Manrope-SemiBold.woff2) format("woff2"),
-		url(assets/fonts/Manrope-SemiBold.woff) format("woff");
+		url(assets/fonts/Manrope-Semibold.woff2) format("woff2"),
+		url(assets/fonts/Manrope-Semibold.woff) format("woff");
 	font-display: swap;
 }
 
@@ -55,15 +55,5 @@
 	src:
 		url(assets/fonts/Manrope-Bold.woff2) format("woff2"),
 		url(assets/fonts/Manrope-Bold.woff) format("woff");
-	font-display: swap;
-}
-
-@font-face {
-	font-weight: 800;
-	font-family: Manrope;
-	font-style: normal;
-	src:
-		url(assets/fonts/Manrope-ExtraBold.woff2) format("woff2"),
-		url(assets/fonts/Manrope-ExtraBold.woff) format("woff");
 	font-display: swap;
 }
