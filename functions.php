@@ -32,9 +32,6 @@ if (!function_exists('adem_setup')) {
 		);
 	}
 
-	//	register thumbnails
-//	add_image_size('123x123', 123, 123, true);
-
 	register_post_type('coaches', [
 		'label' => null,
 		'labels' => [
