@@ -1,5 +1,3 @@
-"use strict";
-
 function get_siblings(elem) {
 	// for collecting siblings
 	let siblings = [];
@@ -17,10 +15,6 @@ function get_siblings(elem) {
 		sibling = sibling.nextSibling;
 	}
 	return siblings;
-}
-
-function slideDown(elem) {
-	elem.style.height = `${elem.scrollHeight}px`;
 }
 
 function slideToggle(elem) {
@@ -133,17 +127,6 @@ function sendForm() {
 	});
 }
 
-function setFileName() {
-	const fileInputs = document.querySelectorAll("input[type=file]");
-	if (fileInputs) {
-		fileInputs.forEach(function (input) {
-			input.addEventListener("change", function (e) {
-				e.target.nextElementSibling.textContent = e.target.files[0].name;
-			});
-		});
-	}
-}
-
 function tabs() {
 	const tabsLists = document.querySelectorAll(".js-tabs");
 	if (tabsLists) {
@@ -189,44 +172,42 @@ function tabs() {
 
 //Ajax
 
-function showMorePosts() {
-	const show_more_btn = document.querySelector(".js-show-more");
+// function showMorePosts() {
+// 	const show_more_btn = document.querySelector(".js-show-more");
 
-	if (!show_more_btn) return;
+// 	if (!show_more_btn) return;
 
-	show_more_btn.addEventListener("click", function (e) {
-		e.stopImmediatePropagation();
-		const container = document.querySelector(".js-show-more-container");
-		this.textContent = "Загрузка...";
+// 	show_more_btn.addEventListener("click", function (e) {
+// 		e.stopImmediatePropagation();
+// 		const container = document.querySelector(".js-show-more-container");
+// 		this.textContent = "Загрузка...";
 
-		const response = fetch(adem_ajax.url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-			},
-			body: new URLSearchParams({
-				action: "load_more",
-				query: posts,
-				page: current_page,
-			}),
-		})
-			.then((response) => response.text())
-			.then((data) => {
-				this.innerHTML = this.dataset.text;
-				container.insertAdjacentHTML("beforeend", data);
-				current_page++;
-				if (current_page === max_pages) this.remove();
-			})
-			.catch((error) => {
-				console.error("Error:", error);
-			});
-	});
-}
+// 		const response = fetch(adem_ajax.url, {
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+// 			},
+// 			body: new URLSearchParams({
+// 				action: "load_more",
+// 				query: posts,
+// 				page: current_page,
+// 			}),
+// 		})
+// 			.then((response) => response.text())
+// 			.then((data) => {
+// 				this.innerHTML = this.dataset.text;
+// 				container.insertAdjacentHTML("beforeend", data);
+// 				current_page++;
+// 				if (current_page === max_pages) this.remove();
+// 			})
+// 			.catch((error) => {
+// 				console.error("Error:", error);
+// 			});
+// 	});
+// }
 
 document.addEventListener("DOMContentLoaded", function () {
 	setHeaderScrollClass();
-
-	setFileName();
 
 	sendForm();
 
@@ -234,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	tabs();
 
-	showMorePosts();
+	// showMorePosts();
 });
 
 //Fancybox
@@ -242,11 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
 try {
 	Fancybox.bind("[data-fancybox]", {
 		animated: false,
-	});
-
-	Fancybox.bind('[data-src="#order-calc"]', {
-		defaultDisplay: "block",
-		dragToClose: false,
 	});
 } catch (error) {
 	console.log(error);
@@ -348,6 +324,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				dropOpener();
 			}
 		})
+
+		if (header.classList.contains('header--index') && window.innerWidth <= 768) {
+			const headerDropLinks = headerDrop.querySelectorAll('.header__drop-item a');
+
+			headerDropLinks.forEach(link => {
+				link.onclick = () => {
+					dropCloser();
+				}
+			})
+		}
 	}
 })
 

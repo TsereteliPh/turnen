@@ -135,6 +135,10 @@
 				opacity: 0.8;
 			}
 		}
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 	&__burger {
@@ -248,6 +252,10 @@
 
 		&:first-child {
 			border: none;
+		}
+
+		a {
+			text-decoration: none;
 		}
 	}
 

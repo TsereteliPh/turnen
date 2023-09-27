@@ -18,13 +18,34 @@
 
 			<div class="header__separator"></div>
 
-			<ul class="reset-list header__menu">
-				<li class="header__menu-item">Мы на карте</li>
-				<li class="header__menu-item">Тренеры</li>
-				<li class="header__menu-item">Цены</li>
-				<li class="header__menu-item">Наш зал</li>
-				<li class="header__menu-item">Контакты</li>
-			</ul>
+
+			<?php
+				$blocks = get_field( 'blocks', 2 );
+				$menu = array(
+					'map' => 'Мы на карте',
+					'coaches' => 'Тренеры',
+					'price' => 'Цены',
+					'album' => 'Наш зал',
+					'contacts' => 'Контакты'
+				);
+				if ( $blocks ) :
+			?>
+				<ul class="reset-list header__menu">
+					<?php
+						foreach ( $blocks as $block ) :
+							if ( isset( $menu[ $block['acf_fc_layout'] ] ) ) :
+					?>
+								<li class="header__menu-item">
+									<a href="<?php echo ( is_front_page() ) ? '#' . $block['acf_fc_layout'] : bloginfo( 'url' ) . '/#' . $block['acf_fc_layout']; ?>">
+										<?php echo $menu[ $block['acf_fc_layout'] ]; ?>
+									</a>
+								</li>
+					<?php
+							endif;
+						endforeach;
+					?>
+				</ul>
+			<?php endif; ?>
 
 			<button class="header__burger" type="button" aria-label="Открыть меню">
 				<span></span>
@@ -34,13 +55,23 @@
 
 	<div class="header__drop">
 		<div class="container">
-			<ul class="reset-list header__drop-list">
-				<li class="header__drop-item">Мы на карте</li>
-				<li class="header__drop-item">Тренеры</li>
-				<li class="header__drop-item">Цены</li>
-				<li class="header__drop-item">Наш зал</li>
-				<li class="header__drop-item">Контакты</li>
-			</ul>
+			<?php if ( $blocks ) : ?>
+				<ul class="reset-list header__drop-list">
+					<?php
+						foreach ( $blocks as $block ) :
+							if ( isset( $menu[ $block['acf_fc_layout'] ] ) ) :
+					?>
+								<li class="header__drop-item">
+									<a href="<?php echo ( is_front_page() ) ? '#' . $block['acf_fc_layout'] : bloginfo( 'url' ) . '/#' . $block['acf_fc_layout']; ?>">
+										<?php echo $menu[ $block['acf_fc_layout'] ]; ?>
+									</a>
+								</li>
+					<?php
+							endif;
+						endforeach;
+					?>
+				</ul>
+			<?php endif; ?>
 
 			<?php
 				$phone = get_field( 'phone', 'options' );
