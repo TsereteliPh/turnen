@@ -41,7 +41,7 @@
 			<?php endif; ?>
 		</div>
 
-		<div class="footer__rights">© All Right Reserved. Turnen. 2023</div>
+		<div class="footer__rights">© All Right Reserved. Turnen. <?php echo date( 'Y' ); ?></div>
 	</div>
 </footer>
 
