@@ -31,7 +31,7 @@
 				</ul>
 
 				<div class="map__parking">
-					<svg width="24" height="24"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-rub"></use></svg>
+					<svg width="24" height="24"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-parking"></use></svg>
 					Пред зданием для вашего удобства предусмотрена парковка
 				</div>
 
