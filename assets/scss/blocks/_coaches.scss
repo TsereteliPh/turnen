@@ -16,7 +16,7 @@
 	&__text {
 		position: relative;
 		z-index: var(--ui-index-1);
-		padding-top: 50px;
+		padding-top: 55px;
 		font-size: 33px;
 		text-align: center;
 
@@ -117,7 +117,7 @@
 	}
 
 	&__person {
-		margin-top: 70px;
+		margin-top: 80px;
 		padding: 0 20px;
 
 		@include lg {
