@@ -18,9 +18,7 @@
 				<?php foreach ( $price as $item ) : ?>
 					<li class="price__item">
 						<button class="price__item-btn<?php echo ( $item['desc'] ) ? ' js-accordion-btn' : ''; ?>" type="button">
-							<?php if ( $item['desc'] ) : ?>
-								<svg width="32" height="32" class="price__item-arrow"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle"></use></svg>
-							<?php endif; ?>
+							<svg width="32" height="32" class="price__item-arrow"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle"></use></svg>
 
 							<div class="price__item-label"><?php echo $item['label']; ?></div>
 
