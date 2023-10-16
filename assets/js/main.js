@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 const price = document.querySelector('.price');
 
 if (price) {
-	const priceBtns = price.querySelectorAll('.price__item-btn');
+	const priceBtns = price.querySelectorAll('.js-accordion-btn');
 
 	const priceBtnsClose = () => {
 		for (let btn of priceBtns) {

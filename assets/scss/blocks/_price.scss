@@ -70,12 +70,14 @@
 			gap: 15px;
 		}
 
-		@media (hover: hover) {
+		&.js-accordion-btn {
+			@media (hover: hover) {
 
-			&:hover {
+				&:hover {
 
-				.price__item-arrow {
-					color: var(--secondary);
+					.price__item-arrow {
+						color: var(--secondary);
+					}
 				}
 			}
 		}
