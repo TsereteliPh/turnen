@@ -31,6 +31,9 @@
 			</ul>
 		<?php endif; ?>
 
-		<button class="btn-circle price__button" type="button" data-fancybox data-src="#callback">Узнать расписание занятий</button>
+		<button class="btn-circle price__button" type="button" data-fancybox data-src="#callback">
+			Узнать расписание занятий
+			<svg width="21" height="21"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-cursor"></use></svg>
+		</button>
 	</div>
 </section>

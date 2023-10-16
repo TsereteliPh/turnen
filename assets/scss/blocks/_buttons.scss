@@ -5,6 +5,7 @@
 	height: 160px;
 	margin: 35px;
 	padding: 0 35px;
+	color: var(--fc-dark);
 	font-size: 16px;
 	text-align: center;
 	text-transform: uppercase;
@@ -73,6 +74,13 @@
 		width: 140%;
 		height: 140%;
 		background: rgba(255, 179, 66, 0.2);
+	}
+
+	svg {
+		position: absolute;
+		bottom: 25px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 

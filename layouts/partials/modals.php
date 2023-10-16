@@ -20,7 +20,10 @@
 
 		<input type="tel" class="input" name="client_tel" placeholder="Ваш телефон" required>
 
-		<button class="btn-circle modal__submit" type="submit">Отправить</button>
+		<button class="btn-circle modal__submit" type="submit">
+			Отправить
+			<svg width="21" height="21"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-cursor"></use></svg>
+		</button>
 	</form>
 
 	<div class="modal__policy">

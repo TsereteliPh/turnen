@@ -81,7 +81,10 @@
 
 				<textarea class="input modal__textarea" name="client_message" placeholder="Время и дата для связи и комментарий"></textarea>
 
-				<button class="btn-circle modal__submit" type="submit">Отправить</button>
+				<button class="btn-circle modal__submit" type="submit">
+					Отправить
+					<svg width="21" height="21"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-cursor"></use></svg>
+				</button>
 			</form>
 
 			<div class="modal__policy">
