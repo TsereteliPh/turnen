@@ -1,4 +1,5 @@
 .contacts {
+	position: relative;
 	background: url(assets/images/contacts-bg.jpg) no-repeat 50% / cover;
 
 	@include md {

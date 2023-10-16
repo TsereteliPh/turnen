@@ -1,5 +1,9 @@
 <section class="coaches" id="coaches">
-	<div class="container">
+	<div class="btn-arrow">
+		<svg width="60" height="60"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle--yellow"></use></svg>
+	</div>
+
+	<div class="container coaches__container">
 		<div class="coaches__info">
 			<?php get_template_part('/layouts/partials/title', null, array(
 				'class' => 'coaches__title',

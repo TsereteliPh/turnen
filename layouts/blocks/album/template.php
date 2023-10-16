@@ -1,6 +1,10 @@
 <?php $albums = get_sub_field( 'albums' ); ?>
 <section class="album" id="album">
-	<div class="container">
+	<div class="btn-arrow">
+		<svg width="60" height="60"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle--yellow"></use></svg>
+	</div>
+
+	<div class="container album__container">
 		<?php get_template_part('/layouts/partials/title', null, array(
 			'class' => 'album__title',
 			'title' => get_sub_field('title')

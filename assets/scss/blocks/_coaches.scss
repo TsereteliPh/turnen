@@ -1,12 +1,16 @@
 .coaches {
+	position: relative;
 	padding-bottom: 80px;
-	overflow: hidden;
 	background:
 		linear-gradient(to bottom, var(--bg-primary) 0%, #ecf3fa 160px, #ecf3fa 160px, rgba(#ecf3fa, 0) 240px) no-repeat,
 		url(assets/images/coaches-bg.jpg) no-repeat 50% / cover;
 
 	@include hg {
 		padding-bottom: 50px;
+	}
+
+	&__container {
+		overflow: hidden;
 	}
 
 	&__title {

@@ -1,9 +1,13 @@
 .album {
-	overflow: hidden;
+	position: relative;
 	background: url(assets/images/ribbon--blue.png) no-repeat left 25px / 700px auto;
 
 	@include lg {
 		background: none;
+	}
+
+	&__container {
+		overflow: hidden;
 	}
 
 	&__title {

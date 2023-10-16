@@ -4,7 +4,11 @@
 	background: url(assets/images/price-bg.jpg) no-repeat 50% / cover;
 
 	@include hg {
-		padding-bottom: 20px;
+		padding-bottom: 50px;
+	}
+
+	@include md {
+		padding-bottom: 30px;
 	}
 
 	&__title {

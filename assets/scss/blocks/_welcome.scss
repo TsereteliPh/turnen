@@ -55,6 +55,24 @@
 		}
 	}
 
+	&__arrow {
+		top: auto;
+		bottom: 35px;
+
+		@include md {
+			top: auto;
+			bottom: 20px;
+		}
+
+		@include sm {
+			bottom: 15px;
+		}
+
+		@include xs {
+			bottom: 0;
+		}
+	}
+
 	&__video {
 		position: absolute;
 		top: 0;

@@ -1,5 +1,9 @@
 <?php $welcome = get_field( 'welcome' ); ?>
 <section class="welcome" data-text="<?php echo $welcome['bg-text']; ?>">
+	<div class="btn-arrow welcome__arrow">
+		<svg width="60" height="60"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle--yellow"></use></svg>
+	</div>
+
 	<video class="welcome__video" src="<?php echo get_template_directory_uri(); ?>/assets/videos/welcome-video.mp4" type="video/mp4" autoplay muted loop></video>
 
 	<div class="container welcome__container">

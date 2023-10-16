@@ -1,4 +1,8 @@
 <section class="contacts" id="contacts">
+	<div class="btn-arrow">
+		<svg width="60" height="60"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle--yellow"></use></svg>
+	</div>
+
 	<div class="container contacts__container">
 		<?php get_template_part('/layouts/partials/title', null, array(
 			'class' => 'contacts__title',
