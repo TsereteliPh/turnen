@@ -81,6 +81,16 @@
 		bottom: 25px;
 		left: 50%;
 		transform: translateX(-50%);
+
+		@include hg {
+			bottom: 10px;
+		}
+
+		@include xs {
+			bottom: 5px;
+			width: 15px;
+			height: auto;
+		}
 	}
 }
 

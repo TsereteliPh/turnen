@@ -103,6 +103,14 @@
 
 		svg {
 			bottom: 45px;
+
+			@include hg {
+				bottom: 25px;
+			}
+
+			@include xs {
+				bottom: 20px;
+			}
 		}
 	}
 
