@@ -356,6 +356,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	}
 })
 
+//Отступ блока .coaches
+
+if (coaches) {
+	const coachesNextElement = coaches.nextElementSibling;
+
+	if (coachesNextElement.classList.contains('price')) {
+		coaches.classList.add('coaches--half');
+	}
+}
+
 
 //Функционал блока .price
 

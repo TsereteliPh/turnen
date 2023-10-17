@@ -10,6 +10,8 @@
 				'title' => get_sub_field('title')
 			)); ?>
 
+			<div class="coaches__before-text">Наши тренеры</div>
+
 			<div class="coaches__text">С вашим ребенком будут заниматься</div>
 		</div>
 
