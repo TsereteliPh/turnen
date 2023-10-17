@@ -25,6 +25,16 @@
 		}
 	}
 
+	&.scroll {
+		position: fixed;
+		box-shadow: 0 5px 15px rgba(#000, 0.2);
+		animation: header-show 0.3s ease-out;
+
+		.header__content {
+			background: var(--primary) url(assets/images/ribbon--red.png) no-repeat right top / 300px;
+		}
+	}
+
 	&__content {
 		position: relative;
 		z-index: var(--ui-index-1);
@@ -259,7 +269,13 @@
 		}
 	}
 
-	&__socials {
+	&__drop-info {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		align-items: center;
+		justify-content: center;
 		width: calc(100% + 1.5rem);
 		margin-left: -0.75rem;
 		padding: 75px 0 120px;
@@ -289,5 +305,53 @@
 			bottom: 0;
 			width: 200px;
 		}
+
+	}
+
+	&__map {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		max-width: 205px;
+		color: var(--fc-light);
+		font-size: 18px;
+		font-family: var(--font-secondary);
+		text-decoration: underline;
+
+		span {
+			display: flex;
+			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 50px;
+			background: var(--gradient) no-repeat 50% / cover;
+			border-radius: 50%;
+
+			@include xs {
+				width: 24px;
+				height: 24px;
+			}
+
+			svg {
+				@include xs {
+					width: 8px;
+					height: 10px;
+				}
+			}
+		}
+	}
+}
+
+@keyframes header-show {
+
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }

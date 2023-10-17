@@ -74,37 +74,47 @@
 				</ul>
 			<?php endif; ?>
 
-			<?php
-				$phone = get_field( 'phone', 'options' );
-				$telegram = get_field( 'telegram', 'options' );
-				$whatsapp = get_field( 'whatsapp', 'options' );
-			?>
 
-			<div class="socials header__socials">
-				<?php if ( $phone ) : ?>
-					<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
-						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
-					</a>
-				<?php endif; ?>
+			<div class="header__drop-info">
+				<a href="#map" class="header__map">
+					<span>
+						<svg width="18" height="22"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-marker"></use></svg>
+					</span>
+					Открыть карту проезда
+				</a>
 
 				<?php
-					if ( $telegram ) :
-					if ( $telegram['type'] == 'link' ) {
-						$tgLink = preg_replace('/@/', '', $telegram['link']);
-					} else {
-						$tgLink = preg_replace('/[^0-9,+]/', '', $telegram['number']);
-					}
+					$phone = get_field( 'phone', 'options' );
+					$telegram = get_field( 'telegram', 'options' );
+					$whatsapp = get_field( 'whatsapp', 'options' );
 				?>
-					<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" aria-label="Ссылка на Telegram">
-						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
-					</a>
-				<?php endif; ?>
 
-				<?php if ( $whatsapp ) : ?>
-					<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" target="_blank" aria-label="Ссылка на WhatsApp">
-						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
-					</a>
-				<?php endif; ?>
+				<div class="socials header__socials">
+					<?php if ( $phone ) : ?>
+						<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
+							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
+						</a>
+					<?php endif; ?>
+
+					<?php
+						if ( $telegram ) :
+						if ( $telegram['type'] == 'link' ) {
+							$tgLink = preg_replace('/@/', '', $telegram['link']);
+						} else {
+							$tgLink = preg_replace('/[^0-9,+]/', '', $telegram['number']);
+						}
+					?>
+						<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" aria-label="Ссылка на Telegram">
+							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
+						</a>
+					<?php endif; ?>
+
+					<?php if ( $whatsapp ) : ?>
+						<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" target="_blank" aria-label="Ссылка на WhatsApp">
+							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
+						</a>
+					<?php endif; ?>
+				</div>
 			</div>
 		</div>
 	</div>

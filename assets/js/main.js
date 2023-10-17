@@ -344,13 +344,27 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			}
 		})
 
-		if (header.classList.contains('header--index') && window.innerWidth <= 768) {
-			const headerDropLinks = headerDrop.querySelectorAll('.header__drop-item a');
+		if (header.classList.contains('header--index')) {
+			const headerLinks = Array.from(header.querySelectorAll('.header__menu-item a'));
+			const headerDropLinks = Array.from(headerDrop.querySelectorAll('.header__drop-item a'));
+			const headerMapLink = Array.from(headerDrop.querySelector('.header__map'));
+			const headerAllLinks = headerLinks.concat(headerDropLinks, headerMapLink);
 
-			headerDropLinks.forEach(link => {
-				link.onclick = () => {
+			headerAllLinks.forEach(link => {
+				link.addEventListener('click', function(evt) {
+					evt.preventDefault();
+
+					let scrollElement = document.querySelector(this.getAttribute('href')).getBoundingClientRect().top;
+					let headerHeight = header.querySelector('.header__content').offsetHeight;
+					let scrollCoordinates = scrollElement + window.scrollY - headerHeight;
+
+					window.scrollTo({
+						top: scrollCoordinates,
+						behavior: "smooth",
+					});
+
 					dropCloser();
-				}
+				})
 			})
 		}
 	}
