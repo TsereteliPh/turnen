@@ -1,9 +1,9 @@
 <section class="map" id="map">
 	<div class="container map__container">
 		<div class="map__label">
-			<h2 class="map__title">Как до нас добраться</h2>
+			<h2 class="map__title"><?php the_sub_field( 'title' ); ?></h2>
 
-			<div class="map__mall">Мы находимся в торговом центре Соле Молл</div>
+			<div class="map__mall"><?php the_sub_field( 'text' ); ?></div>
 		</div>
 
 		<address class="map__address">
@@ -15,71 +15,164 @@
 	</div>
 
 	<div class="map__wrapper">
-		<?php
-			$route = get_sub_field( 'route' );
-			if ( $route ) :
-		?>
-			<div class="map__info">
-				<ul class="reset-list map__list">
-					<?php foreach ( $route as $item ) : ?>
-						<li class="map__item">
-							<svg width="24" height="24" style="color: <?php echo $item['color']; ?>;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-							<?php echo $item['label']; ?>
-							<span><?php echo $item['time']; ?> мин</span>
-						</li>
-					<?php endforeach; ?>
-				</ul>
+		<div class="map__info">
+			<div class="map__info-label">Выберите, как будете добираться:</div>
 
-				<div class="map__parking">
-					<svg width="24" height="24"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-parking"></use></svg>
-					Пред зданием для вашего удобства предусмотрена парковка
-				</div>
+			<ul class="reset-list map__info-tabs js-tabs">
+				<li class="map__info-tab active" data-tab="map-bus">
+					<svg width="40" height="39"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-bus"></use></svg>
+					На автобусе
+				</li>
 
-				<button class="map__info-btn" type="button"></button>
+				<li class="map__info-tab" data-tab="map-car">
+					<svg width="44" height="31"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-car"></use></svg>
+					На машине
+				</li>
+
+				<li class="map__info-tab" data-tab="map-pedestiran">
+					<svg width="31" height="43"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-pedestrian"></use></svg>
+					Пешком
+				</li>
+			</ul>
+
+			<ul class="reset-list map__list active" id="map-bus">
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #62B212;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					ВДНХ
+					<span>19 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #1944C5;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Свиблово
+					<span>26 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #B16CCD;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Бабушкинская
+					<span>28 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #ffbf00;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Ростокино (МЦК)
+					<span>15 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #ff7f00;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Алексеевская
+					<span>27 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #bf1e45;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Белокаменная
+					<span>26 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #b07030;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Б-р Рокосовского
+					<span>35 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #ff4000;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Ботанический сад
+					<span>20 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #9217ad;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Отрадное
+					<span>32 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #007fff;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Медведково
+					<span>29 мин</span>
+				</li>
+			</ul>
+
+			<ul class="reset-list map__list" id="map-car">
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #62B212;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					ВДНХ
+					<span>14 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #1944C5;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Свиблово
+					<span>12 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #B16CCD;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Бабушкинская
+					<span>18 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #ffbf00;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Ростокино (МЦК)
+					<span>13 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #ff7f00;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Алексеевская
+					<span>22 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #bf1e45;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Белокаменная
+					<span>17 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #b07030;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Б-р Рокосовского
+					<span>25 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #ff4000;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Ботанический сад
+					<span>16 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #9217ad;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Отрадное
+					<span>18 мин</span>
+				</li>
+
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #007fff;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Медведково
+					<span>20 мин</span>
+				</li>
+			</ul>
+
+			<ul class="reset-list map__list" id="map-pedestiran">
+				<li class="map__item">
+					<svg width="24" height="24" style="color: #23cc77;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
+					Лосиноостровская
+					<span>7 мин</span>
+				</li>
+			</ul>
+
+			<div class="map__parking">
+				<svg width="24" height="24"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-parking"></use></svg>
+				Пред зданием для вашего удобства предусмотрена парковка
 			</div>
-		<?php endif; ?>
+		</div>
 
-		<div id="map-holder" class="map__holder"></div>
+		<div class="map__holder"></div>
 	</div>
-
-	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-    <?php $map = get_field( 'map', 'options' ); ?>
-    <script>
-        document.addEventListener("DOMContentLoaded", function (e) {
-			function init(){
-                <?php if ($map) : ?>
-                    <?php $map = json_decode($map, true); ?>
-                    const map = new ymaps.Map('map-holder', {
-                        center: [<?php echo $map['center_lat'] ?>,<?php echo $map['center_lng'] ?>],
-                        zoom: <?php echo $map['zoom']; ?>
-                    });
-
-                    <?php foreach ($map['marks'] as $mark): ?>
-                        map.geoObjects.add(
-                            new ymaps.Placemark([<?php echo $mark['coords'][0]; ?>, <?php echo $mark['coords'][1]; ?>], {
-                                    balloonContent: '<?php echo $mark['content'] ?>'
-                                },
-                                {
-                                    iconLayout: 'default#image',
-                                    iconImageHref: '<?php echo get_template_directory_uri(); ?>/assets/images/logo-main.png',
-                                    iconImageSize: [50, 50],
-                                    iconImageOffset: [-25, -25]
-                                })
-                        );
-                    <?php endforeach; ?>
-
-                    map.controls.remove('geolocationControl'); // удаляем геолокацию
-                    map.controls.remove('searchControl'); // удаляем поиск
-                    map.controls.remove('trafficControl'); // удаляем контроль трафика
-                    map.controls.remove('typeSelector'); // удаляем тип
-                    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-                    // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-                    map.controls.remove('rulerControl'); // удаляем контрол правил
-                    map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
-                <?php endif; ?>
-            }
-
-			ymaps.ready(init);
-        });
-    </script>
 </section>
