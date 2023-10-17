@@ -1,6 +1,6 @@
 .album {
 	position: relative;
-	background: url(assets/images/ribbon--blue.png) no-repeat left 25px / 700px auto;
+	background: url(assets/images/ribbon--blue.png) no-repeat calc(50% - 610px) 20px / 700px auto;
 
 	@include lg {
 		background: none;
@@ -63,6 +63,7 @@
 
 	&__item {
 		display: flex;
+		gap: 18px;
 		align-items: center;
 		justify-content: center;
 		min-height: 70px;
@@ -86,6 +87,12 @@
 				box-shadow: 0 5px 5px rgba(#000, 0.1);
 				transform: translateY(-5px);
 			}
+		}
+
+		img {
+			width: auto;
+			height: 34px;
+			object-fit: contain;
 		}
 
 		&.active {

@@ -110,6 +110,35 @@ acf_add_local_field_group(array(
 			'rows_per_page' => 20,
 			'sub_fields' => array(
 				array(
+					'key' => 'field_652e6e5b1f325',
+					'label' => 'Иконка',
+					'name' => 'icon',
+					'aria-label' => '',
+					'type' => 'image',
+					'instructions' => 'Примерное соотношение сторон у иконки должно быть 1 : 1',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '40',
+						'class' => '',
+						'id' => '',
+					),
+					'uploader' => '',
+					'acfe_thumbnail' => 0,
+					'return_format' => 'id',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '.svg',
+					'preview_size' => 'thumbnail',
+					'acfe_field_group_condition' => 0,
+					'library' => 'all',
+					'parent_repeater' => 'field_651170825d49b',
+				),
+				array(
 					'key' => 'field_651170945d49c',
 					'label' => 'Название альбома',
 					'name' => 'label',
@@ -119,7 +148,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '60',
 						'class' => '',
 						'id' => '',
 					),
@@ -189,7 +218,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1695641973,
+	'modified' => 1697542191,
 ));
 
 endif;

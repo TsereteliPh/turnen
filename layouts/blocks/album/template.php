@@ -18,7 +18,14 @@
 		<?php if ( $albums ) : ?>
 			<ul class="reset-list album__list js-tabs">
 				<?php foreach ( $albums as $key => $album ) : ?>
-                    <li class="album__item<?php echo ( $key == 0 ) ? ' active' : ''; ?>" data-tab="album-<?php echo $key + 1; ?>"><?php echo $album['label']; ?></li>
+                    <li class="album__item<?php echo ( $key == 0 ) ? ' active' : ''; ?>" data-tab="album-<?php echo $key + 1; ?>">
+						<?php
+							if ( $album['icon'] ) {
+								echo wp_get_attachment_image( $album['icon'], 'thumbnail', false );
+							}
+							echo $album['label'];
+						?>
+					</li>
                 <?php endforeach;?>
 			</ul>
 
