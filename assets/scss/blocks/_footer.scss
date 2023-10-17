@@ -12,7 +12,7 @@
 		height: fit-content;
 		color: rgba(#ebf3ff, 0.5);
 		font-size: 306px;
-		line-height: 0.4;
+		line-height: 0.6;
 		text-transform: uppercase;
 		transform: translateX(-50%);
 		content: "Школа";
@@ -27,7 +27,6 @@
 
 		@include xs {
 			font-size: 120px;
-			line-height: 0.6;
 		}
 	}
 
@@ -80,7 +79,8 @@
 	}
 
 	&__policy,
-	&__public-offer {
+	&__public-offer,
+	&__map {
 		color: var(--primary);
 		font-size: 18px;
 		font-family: var(--font-secondary);
@@ -118,36 +118,36 @@
 		}
 	}
 
-	&__socials {
-		color: var(--primary);
+	&__map {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+		max-width: 205px;
 
-		@include lg {
-			gap: 20px;
+		@include md {
+			display: none;
 		}
 
-		@include sm {
-			flex-direction: column;
-			grid-row: 1/4;
-			grid-column: 3/4;
-			gap: 5px;
-			align-self: start;
-			justify-content: space-between;
-		}
+		span {
+			display: flex;
+			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 50px;
+			background: var(--gradient) no-repeat 50% / cover;
+			border-radius: 50%;
 
-		@include xs {
-			gap: 5px;
-		}
-
-		a {
-
-			@include lg {
-				width: 40px;
-				height: 40px;
+			@include xs {
+				width: 24px;
+				height: 24px;
 			}
 
-			@include sm {
-				width: 30px;
-				height: 30px;
+			svg {
+				@include xs {
+					width: 8px;
+					height: 10px;
+				}
 			}
 		}
 	}
