@@ -4,7 +4,7 @@
 	width: 160px;
 	height: 160px;
 	margin: 35px;
-	padding: 0 35px;
+	padding: 0 35px 10px;
 	color: var(--fc-dark);
 	font-size: 16px;
 	text-align: center;
@@ -20,7 +20,7 @@
 		width: 120px;
 		height: 120px;
 		margin: 25px;
-		padding: 0;
+		padding: 0 0 10px;
 		font-size: 14px;
 	}
 
@@ -87,7 +87,6 @@
 		}
 
 		@include xs {
-			bottom: 5px;
 			width: 15px;
 			height: auto;
 		}
