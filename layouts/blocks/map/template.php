@@ -163,7 +163,7 @@
 				<li class="map__item">
 					<svg width="24" height="24" style="color: #23cc77;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
 					Лосиноостровская
-					<span>7 мин</span>
+					<span>5 мин</span>
 				</li>
 			</ul>
 

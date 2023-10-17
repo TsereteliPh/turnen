@@ -188,7 +188,7 @@
 	&__list {
 		display: none;
 		flex-direction: column;
-		gap: 15px;
+		gap: 10px;
 		margin-top: 15px;
 
 		&.active {
@@ -198,7 +198,7 @@
 
 	&__item,
 	&__parking {
-		font-size: 18px;
+		font-size: 16px;
 		font-family: var(--font-secondary);
 
 		@include md {
@@ -218,7 +218,7 @@
 		span {
 			flex-shrink: 0;
 			margin-left: auto;
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
 
