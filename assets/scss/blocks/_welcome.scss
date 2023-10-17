@@ -87,7 +87,7 @@
 		display: grid;
 		grid-template-columns: 1fr 220px;
 		gap: 35px 40px;
-		padding: 50vh 100px 0;
+		padding: 50vh 95px 0;
 
 		@include hg {
 			row-gap: 15px;
@@ -153,6 +153,19 @@
 
 		@include xs {
 			font-size: 20px;
+		}
+
+		span {
+			display: block;
+			margin-left: 115px;
+
+			@include lg {
+				margin-left: 60px;
+			}
+
+			@include md {
+				margin-left: 0;
+			}
 		}
 	}
 }

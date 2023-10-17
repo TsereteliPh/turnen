@@ -52,7 +52,7 @@ acf_add_local_field_group(array(
 					'label' => 'Заголовок',
 					'name' => 'title',
 					'aria-label' => '',
-					'type' => 'text',
+					'type' => 'textarea',
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
@@ -62,10 +62,11 @@ acf_add_local_field_group(array(
 						'id' => '',
 					),
 					'default_value' => '',
+					'acfe_textarea_code' => 0,
 					'maxlength' => '',
+					'rows' => 3,
 					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
+					'new_lines' => 'br',
 					'acfe_field_group_condition' => 0,
 				),
 				array(
@@ -120,7 +121,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1695197237,
+	'modified' => 1697555282,
 ));
 
 endif;
