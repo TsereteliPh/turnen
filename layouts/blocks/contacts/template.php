@@ -22,6 +22,7 @@
 				<?php if ( $phone ) : ?>
 					<div class="st-hypten contacts__socials-wrapper">
 						<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" class="contacts__socials-link">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-phone.svg" alt="Иконка телефона" width="45" height="45">
 							<svg width="40" height="40"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
 							<?php echo $phone['number']; ?>
 						</a>
@@ -35,6 +36,7 @@
 				<?php if ( $whatsapp ) : ?>
 					<div class="st-hypten contacts__socials-wrapper">
 						<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" class="contacts__socials-link" target="_blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-whatsapp.svg" alt="Иконка whatsapp" width="45" height="45">
 							<svg width="40" height="40"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
 							<?php echo $whatsapp['link']; ?>
 						</a>
@@ -55,6 +57,7 @@
 				?>
 					<div class="st-hypten contacts__socials-wrapper">
 						<a href="https://t.me/<?php echo $tgLink; ?>" class="contacts__socials-link" target="_blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-telegram.svg" alt="Иконка телеграма" width="45" height="45">
 							<svg width="40" height="40"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
 							<?php echo $telegram[$telegram['type']]; ?>
 						</a>

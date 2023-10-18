@@ -131,11 +131,21 @@
 			}
 		}
 
+		img {
+			display: none;
+			flex-shrink: 0;
+			order: 1;
+
+			@include xs {
+				display: block;
+			}
+		}
+
 		svg {
 			flex-shrink: 0;
 
 			@include xs {
-				order: 1;
+				display: none;
 			}
 		}
 	}

@@ -62,14 +62,14 @@
 				<?php if ( $whatsapp ) : ?>
 					<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" class="header__content-social" target="_blank" aria-label="Ссылка на WhatsApp">
 						Написать в Вотсап
-						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-phone.svg" alt="Иконка телефона" width="28" height="28">
 					</a>
 				<?php endif; ?>
 
 				<?php if ( $phone ) : ?>
 					<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" class="header__content-social" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
 						Позвонить
-						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-whatsapp.svg" alt="Иконка WhatsApp" width="28" height="28">
 					</a>
 				<?php endif; ?>
 
@@ -83,7 +83,7 @@
 				?>
 					<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" class="header__content-social" aria-label="Ссылка на Telegram">
 						Подписаться на Телеграм
-						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-telegram.svg" alt="Иконка телеграм" width="28" height="28">
 					</a>
 					</div>
 				<?php endif; ?>
@@ -121,21 +121,21 @@
 				</a>
 
 				<div class="socials header__socials">
+					<?php if ( $whatsapp ) : ?>
+						<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" target="_blank" aria-label="Ссылка на WhatsApp">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-whatsapp.svg" alt="Иконка WhatsApp" width="28" height="28">
+						</a>
+					<?php endif; ?>
+
 					<?php if ( $phone ) : ?>
 						<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
-							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-phone.svg" alt="Иконка телефона" width="28" height="28">
 						</a>
 					<?php endif; ?>
 
 					<?php if ( $telegram ) : ?>
 						<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" aria-label="Ссылка на Telegram">
-							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
-						</a>
-					<?php endif; ?>
-
-					<?php if ( $whatsapp ) : ?>
-						<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" target="_blank" aria-label="Ссылка на WhatsApp">
-							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-telegram.svg" alt="Иконка телеграма" width="28" height="28">
 						</a>
 					<?php endif; ?>
 				</div>
