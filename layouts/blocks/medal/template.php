@@ -29,9 +29,9 @@
 					$beforeSocialLink = 'https://t.me/';
 
 					if ( $currentSocial['type'] == 'link' ) {
-						$socialLink = preg_replace('/@/', '', $telegram['link']);
+						$socialLink = preg_replace('/@/', '', $currentSocial['link']);
 					} else {
-						$socialLink = preg_replace('/[^0-9,+]/', '', $telegram['number']);
+						$socialLink = preg_replace('/[^0-9,+]/', '', $currentSocial['number']);
 					}
 				} else if ( $social == 'whatsapp' ) {
 					$beforeSocialLink = 'https://wa.me/';
