@@ -20,6 +20,8 @@
 
 		<input type="tel" class="input" name="client_tel" placeholder="Ваш телефон" required>
 
+		<textarea class="input modal__textarea" name="client_message" placeholder="Время и дата для связи и комментарий"></textarea>
+
 		<button class="btn-circle modal__submit" type="submit">
 			Отправить
 			<svg width="21" height="21"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-cursor"></use></svg>
