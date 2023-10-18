@@ -1,7 +1,6 @@
 html {
 	box-sizing: border-box;
 	min-width: 360px;
-	scroll-behavior: smooth;
 }
 
 *,
@@ -142,7 +141,7 @@ iframe {
 	}
 
 	@include xs {
-		margin-top: 105px;
+		margin-top: 250px;
 	}
 
 	&--index {

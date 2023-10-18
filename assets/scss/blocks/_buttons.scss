@@ -109,6 +109,10 @@
 		height: 40px;
 	}
 
+	@include xs {
+		display: none;
+	}
+
 	svg {
 		width: 100%;
 		height: 100%;

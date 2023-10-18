@@ -39,6 +39,7 @@
 		color: var(--fc-dark);
 		font-size: inherit;
 		line-height: 1.15;
+		white-space: normal;
 		text-transform: none;
 		transform: none;
 		user-select: all;
@@ -46,13 +47,13 @@
 }
 
 h1.title--normal {
-	font-size: clamp(34px, 4vw, 42px);
+	font-size: clamp(24px, 4vw, 42px);
 }
 
 h2.title--normal {
-	font-size: clamp(28px, 2vw + 15px, 34px);
+	font-size: clamp(22px, 2vw + 15px, 34px);
 }
 
 h3.title--normal {
-	font-size: clamp(22px, 2vw + 10px, 26px);
+	font-size: clamp(20px, 2vw + 10px, 26px);
 }

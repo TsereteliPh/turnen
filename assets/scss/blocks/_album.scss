@@ -6,6 +6,10 @@
 		background: none;
 	}
 
+	@include xs {
+		padding-bottom: 50px;
+	}
+
 	&__container {
 		overflow: hidden;
 	}
