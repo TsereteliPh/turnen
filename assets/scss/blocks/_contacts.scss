@@ -119,6 +119,11 @@
 			justify-content: center;
 		}
 
+		@include xs {
+			justify-content: flex-start;
+			font-size: 30px;
+		}
+
 		@media (hover: hover) {
 
 			&:hover {
@@ -128,6 +133,10 @@
 
 		svg {
 			flex-shrink: 0;
+
+			@include xs {
+				order: 1;
+			}
 		}
 	}
 
@@ -145,6 +154,11 @@
 
 		@include sm {
 			text-align: center;
+		}
+
+		@include xs {
+			max-width: 240px;
+			text-align: left;
 		}
 	}
 
