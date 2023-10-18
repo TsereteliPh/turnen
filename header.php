@@ -51,6 +51,43 @@
 			<button class="header__burger" type="button" aria-label="Открыть меню">
 				<span></span>
 			</button>
+
+			<?php
+				$phone = get_field( 'phone', 'options' );
+				$telegram = get_field( 'telegram', 'options' );
+				$whatsapp = get_field( 'whatsapp', 'options' );
+			?>
+
+			<div class="header__content-socials">
+				<?php if ( $whatsapp ) : ?>
+					<a href="https://wa.me/<?php echo preg_replace('/[^0-9,+]/', '', $whatsapp['link']); ?>" class="header__content-social" target="_blank" aria-label="Ссылка на WhatsApp">
+						Написать в Вотсап
+						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-whatsapp"></use></svg>
+					</a>
+				<?php endif; ?>
+
+				<?php if ( $phone ) : ?>
+					<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" class="header__content-social" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
+						Позвонить
+						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-phone"></use></svg>
+					</a>
+				<?php endif; ?>
+
+				<?php
+					if ( $telegram ) :
+					if ( $telegram['type'] == 'link' ) {
+						$tgLink = preg_replace('/@/', '', $telegram['link']);
+					} else {
+						$tgLink = preg_replace('/[^0-9,+]/', '', $telegram['number']);
+					}
+				?>
+					<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" class="header__content-social" aria-label="Ссылка на Telegram">
+						Подписаться на Телеграм
+						<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
+					</a>
+					</div>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 
@@ -83,12 +120,6 @@
 					Открыть карту проезда
 				</a>
 
-				<?php
-					$phone = get_field( 'phone', 'options' );
-					$telegram = get_field( 'telegram', 'options' );
-					$whatsapp = get_field( 'whatsapp', 'options' );
-				?>
-
 				<div class="socials header__socials">
 					<?php if ( $phone ) : ?>
 						<a href="tel:<?php echo preg_replace('/[^0-9,+]/', '', $phone['number']); ?>" aria-label="Позвонить по номеру: <?php echo $phone['number']; ?>">
@@ -96,14 +127,7 @@
 						</a>
 					<?php endif; ?>
 
-					<?php
-						if ( $telegram ) :
-						if ( $telegram['type'] == 'link' ) {
-							$tgLink = preg_replace('/@/', '', $telegram['link']);
-						} else {
-							$tgLink = preg_replace('/[^0-9,+]/', '', $telegram['number']);
-						}
-					?>
+					<?php if ( $telegram ) : ?>
 						<a href="https://t.me/<?php echo $tgLink; ?>" target="_blank" aria-label="Ссылка на Telegram">
 							<svg width="50" height="50"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
 						</a>

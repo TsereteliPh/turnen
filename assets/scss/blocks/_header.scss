@@ -22,6 +22,13 @@
 			@include sm {
 				background: var(--primary) url(assets/images/ribbon--red.png) no-repeat right top / 300px;
 			}
+
+			@include xs {
+				background:
+					url(assets/images/ribbon--blue.png) no-repeat -110px 5px / 265px auto,
+					url(assets/images/ribbon--blue.png) no-repeat calc(50% + 245px) -30px / 265px auto;
+				background-color: var(--primary);
+			}
 		}
 	}
 
@@ -31,7 +38,71 @@
 		animation: header-show 0.3s ease-out;
 
 		.header__content {
-			background: var(--primary) url(assets/images/ribbon--red.png) no-repeat right top / 300px;
+			background: var(--bg-primary);
+			border-top: 6px solid var(--secondary);
+
+			@include hg {
+				border-width: 3px;
+			}
+
+			@include sm {
+				border-top: none;
+			}
+		}
+
+		.header__container {
+			@include xs {
+				display: flex;
+				justify-content: space-between;
+				padding: 15px 0;
+			}
+		}
+
+		.header__menu-item,
+		.header__drop-item {
+			color: var(--fc-dark);
+
+			@media (hover: hover) {
+
+				&:hover {
+					color: var(--primary);
+				}
+			}
+		}
+
+		.header__burger {
+
+			span {
+				background-color: var(--fc-dark);
+
+				&::before,
+				&::after {
+					background-color: var(--fc-dark);
+				}
+			}
+
+			&.active {
+
+				span {
+					background: transparent;
+				}
+			}
+		}
+
+		.header__content-socials {
+			display: none;
+		}
+
+		.header__drop {
+			background-color: var(--bg-primary);
+		}
+
+		.header__map {
+			color: var(--fc-dark);
+		}
+
+		.header__socials {
+			color: var(--fc-dark);
 		}
 	}
 
@@ -50,6 +121,13 @@
 			background-size: 300px auto;
 			border: none;
 		}
+
+		@include xs {
+			background:
+				url(assets/images/ribbon--blue.png) no-repeat -110px 5px / 265px auto,
+				url(assets/images/ribbon--blue.png) no-repeat calc(50% + 245px) -30px / 265px auto;
+			background-color: var(--primary);
+		}
 	}
 
 	&__container {
@@ -64,6 +142,12 @@
 
 		@include sm {
 			justify-content: space-between;
+		}
+
+		@include xs {
+			display: grid;
+			gap: 0;
+			padding: 15px 55px;
 		}
 	}
 
@@ -166,6 +250,10 @@
 			display: flex;
 		}
 
+		@include xs {
+			justify-self: end;
+		}
+
 		&:hover {
 
 			span {
@@ -180,8 +268,6 @@
 
 			span {
 				background: transparent;
-				transition-delay: 0.25s;
-				transition-duration: 0.1s;
 
 				&::before {
 					top: 0;
@@ -204,8 +290,6 @@
 			width: 100%;
 			height: 2px;
 			background-color: var(--fc-light);
-			transition-delay: 0.25s;
-			transition-duration: 0.25s;
 			pointer-events: none;
 
 			&::before,
@@ -230,6 +314,33 @@
 				transition: width 0.25s, transform 0.25s, top 0.25s .25s;
 				transition-duration: 0.25s;
 			}
+		}
+	}
+
+	&__content-socials {
+		display: none;
+		flex-direction: column;
+		grid-column: span 2;
+		gap: 15px;
+		margin-top: 10px;
+
+		@include xs {
+			display: flex;
+		}
+	}
+
+	&__content-social {
+		display: flex;
+		gap: 5px;
+		align-items: center;
+		justify-content: space-between;
+		color: var(--bg-primary);
+		font-size: 18px;
+		text-decoration: none;
+
+		svg {
+			width: 28px;
+			height: 28px;
 		}
 	}
 

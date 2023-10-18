@@ -329,11 +329,13 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		const dropOpener = () => {
 			headerBurger.classList.add('active');
 			headerDrop.style.maxHeight = headerDrop.scrollHeight + "px";
+			document.body.style.overflow = 'hidden';
 		}
 
 		const dropCloser = () => {
 			headerBurger.classList.remove('active');
 			headerDrop.style.maxHeight = 0;
+			document.body.style.overflow = 'visible';
 		}
 
 		headerBurger.addEventListener('click', function() {
@@ -354,6 +356,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				link.addEventListener('click', function(evt) {
 					evt.preventDefault();
 
+					dropCloser();
+
 					let scrollElement = document.querySelector(this.getAttribute('href')).getBoundingClientRect().top;
 					let headerHeight = header.querySelector('.header__content').offsetHeight;
 					let scrollCoordinates = scrollElement + window.scrollY - headerHeight;
@@ -362,8 +366,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 						top: scrollCoordinates,
 						behavior: "smooth",
 					});
-
-					dropCloser();
 				})
 			})
 		}

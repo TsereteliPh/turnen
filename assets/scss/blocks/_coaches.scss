@@ -137,6 +137,7 @@
 
 	&__slider-pagination.swiper-pagination {
 		bottom: -30px;
+		z-index: var(--ui-index-1);
 		--swiper-theme-color: var(--primary);
 	}
 
