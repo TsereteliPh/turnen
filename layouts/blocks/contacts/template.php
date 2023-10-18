@@ -56,7 +56,7 @@
 					}
 				?>
 					<div class="st-hypten contacts__socials-wrapper">
-						<a href="https://t.me/<?php echo $tgLink; ?>" class="contacts__socials-link" target="_blank">
+						<a href="https://t.me/<?php echo $tgLink; ?>" class="contacts__socials-link contacts__socials-link--telegram" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-telegram.svg" alt="Иконка телеграма" width="45" height="45">
 							<svg width="40" height="40"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-telegram"></use></svg>
 							<?php echo $telegram[$telegram['type']]; ?>
