@@ -33,7 +33,7 @@
 				foreach ( $albums as $key => $album ) :
 				$albumName = 'album-'. ($key + 1);
 			?>
-				<div class="gallery album__gallery<?php echo ( $key == 0 ) ? ' active' : ''; ?>" id="<?php echo $albumName ?>">
+				<div class="gallery album__gallery<?php echo ( $key == 0 ) ? ' active album__gallery--mobile' : ''; ?>" id="<?php echo $albumName ?>">
 					<?php if ( $album['gallery'] ) : ?>
 						<?php foreach ( $album['gallery'] as $photo ) : ?>
 							<a href="<?php echo $photo['url']; ?>" class="gallery__link" data-fancybox="<?php echo $albumName; ?>">
