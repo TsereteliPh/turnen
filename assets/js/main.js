@@ -372,6 +372,28 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	}
 })
 
+//Функционал кнопок btn-arrow
+
+const arrowBtns = document.querySelectorAll('.btn-arrow');
+
+if (arrowBtns) {
+	arrowBtns.forEach(btn => {
+		btn.addEventListener('click', function() {
+			let scrollElement = btn.parentNode;
+			if (btn.classList.contains('js-scroll-next')) {
+				scrollElement = btn.parentNode.nextElementSibling;
+			}
+			let headerHeight = document.querySelector('.header__content').offsetHeight;
+			let scrollCoordinates = scrollElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+			window.scrollTo({
+				top: scrollCoordinates,
+				behavior: "smooth",
+			})
+		})
+	})
+}
+
 //Отступ блока .coaches
 
 if (coaches) {

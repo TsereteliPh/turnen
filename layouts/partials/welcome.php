@@ -1,6 +1,6 @@
 <?php $welcome = get_field( 'welcome' ); ?>
 <section class="welcome" data-text="<?php echo $welcome['bg-text']; ?>">
-	<div class="btn-arrow welcome__arrow">
+	<div class="btn-arrow js-scroll-next welcome__arrow">
 		<svg width="60" height="60"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle--yellow"></use></svg>
 	</div>
 
