@@ -36,7 +36,8 @@
 		margin-top: 30px;
 
 		@include md {
-			grid-template-columns: 1fr;
+			display: flex;
+			flex-direction: column;
 			gap: 20px;
 		}
 	}
@@ -56,6 +57,10 @@
 
 		@include xs {
 			padding: 15px 10px;
+		}
+
+		&:nth-child(even) {
+			order: 1;
 		}
 	}
 
