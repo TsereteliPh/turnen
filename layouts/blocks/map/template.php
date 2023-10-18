@@ -65,36 +65,6 @@
 					Алексеевская
 					<span>27 мин</span>
 				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #bf1e45;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Белокаменная
-					<span>26 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #b07030;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Б-р Рокосовского
-					<span>35 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #ff4000;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Ботанический сад
-					<span>20 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #9217ad;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Отрадное
-					<span>32 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #007fff;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Медведково
-					<span>29 мин</span>
-				</li>
 			</ul>
 
 			<ul class="reset-list map__list" id="map-car">
@@ -126,36 +96,6 @@
 					<svg width="24" height="24" style="color: #ff7f00;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
 					Алексеевская
 					<span>22 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #bf1e45;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Белокаменная
-					<span>17 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #b07030;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Б-р Рокосовского
-					<span>25 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #ff4000;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Ботанический сад
-					<span>16 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #9217ad;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Отрадное
-					<span>18 мин</span>
-				</li>
-
-				<li class="map__item">
-					<svg width="24" height="24" style="color: #007fff;"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-metro"></use></svg>
-					Медведково
-					<span>20 мин</span>
 				</li>
 			</ul>
 
