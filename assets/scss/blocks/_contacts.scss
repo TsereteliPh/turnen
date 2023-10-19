@@ -11,9 +11,7 @@
 	}
 
 	@include xs {
-		background:
-			url(assets/images/contacts-child-bg.jpg) no-repeat 50% bottom / 100% auto,
-			url(assets/images/contacts-mobile-bg.jpg) no-repeat 50% / cover;
+		background: #dd291e url(assets/images/contacts-child-bg.jpg) no-repeat 50% bottom / 100% auto;
 	}
 
 	&__container {
