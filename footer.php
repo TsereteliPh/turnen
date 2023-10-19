@@ -5,9 +5,9 @@
 		<a href="<?php echo bloginfo( 'url' ); ?>" class="footer__logo" aria-label="Логотип школы"></a>
 
 		<div class="footer__links">
-			<a href="<?php echo get_privacy_policy_url(); ?>" class="footer__policy" target="_blank">Политика в отношении обработки персональных данных</a>
+			<a href="<?php echo get_privacy_policy_url(); ?>" class="footer__policy">Политика в отношении обработки персональных данных</a>
 
-			<a href="<?php echo get_page_link( 31 ); ?>" class="footer__public-offer" target="_blank">Публичная оферта</a>
+			<a href="<?php echo get_page_link( 31 ); ?>" class="footer__public-offer">Публичная оферта</a>
 		</div>
 
 		<?php wp_nav_menu(array(
