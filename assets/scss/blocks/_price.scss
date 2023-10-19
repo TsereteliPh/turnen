@@ -60,7 +60,9 @@
 		}
 
 		&:nth-child(even) {
-			order: 1;
+			@include xs {
+				order: 1;
+			}
 		}
 	}
 

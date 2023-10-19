@@ -51,11 +51,19 @@
 			grid-column: span 2;
 		}
 
+		&:nth-child(5n) {
+			@include xs {
+				grid-row: span 2;
+				grid-column: span 2;
+			}
+		}
+
 		&:nth-child(7n) {
 			grid-row: span 2;
 			grid-column: span 2;
 
 			@include sm {
+				grid-row: span 1;
 				grid-column: span 1;
 			}
 		}
