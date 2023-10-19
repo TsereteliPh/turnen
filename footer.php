@@ -4,9 +4,18 @@
 	<div class="container footer__container">
 		<a href="<?php echo bloginfo( 'url' ); ?>" class="footer__logo" aria-label="Логотип школы"></a>
 
-		<a href="<?php echo get_privacy_policy_url(); ?>" class="footer__policy" target="_blank">Политика в отношении обработки персональных данных</a>
+		<div class="footer__links">
+			<a href="<?php echo get_privacy_policy_url(); ?>" class="footer__policy" target="_blank">Политика в отношении обработки персональных данных</a>
 
-		<a href="<?php echo get_page_link( 31 ); ?>" class="footer__public-offer" target="_blank">Публичная оферта</a>
+			<a href="<?php echo get_page_link( 31 ); ?>" class="footer__public-offer" target="_blank">Публичная оферта</a>
+		</div>
+
+		<?php wp_nav_menu(array(
+			'theme_location' => 'menu_footer',
+			'container' => '',
+			'menu_id' => 'menu-footer',
+			'menu_class' => 'reset-list footer__menu'
+		)); ?>
 
 		<a href="#map" class="footer__map">
 			<span>
