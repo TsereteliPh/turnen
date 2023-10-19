@@ -136,6 +136,15 @@
 			}
 		}
 	}
+
+	&__load-more {
+		display: none;
+		margin-top: 15px;
+
+		@include xs {
+			display: flex;
+		}
+	}
 }
 
 @keyframes showIn {

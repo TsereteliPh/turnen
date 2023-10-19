@@ -394,6 +394,34 @@ if (arrowBtns) {
 	})
 }
 
+//Функционал кнопки btn-load-more в блоке blocks/album (костыль)
+
+const album = document.querySelector('.album');
+
+if (album) {
+	const albumList = album.querySelector('.album__gallery--mobile');
+	const albumItems = albumList.querySelectorAll('.gallery__link');
+	const loadMoreBtn = album.querySelector('.album__load-more');
+
+	if (window.innerWidth <= 576) {
+		if (albumItems.length > 9) {
+			for (let i = 9; i < albumItems.length; i++) {
+				albumItems[i].style.display = 'none';
+			}
+		} else {
+			loadMoreBtn.style.display = 'none';
+		}
+
+		loadMoreBtn.addEventListener('click', function() {
+			for (let i = 9; i < albumItems.length; i++) {
+				albumItems[i].style.display = 'flex';
+			}
+
+			this.style.display = 'none';
+		});
+	}
+}
+
 //Отступ блока .coaches
 
 if (coaches) {

@@ -43,6 +43,11 @@
 					<?php endif; ?>
 				</div>
 			<?php endforeach; ?>
+
+			<button class="btn-load-more album__load-more" type="button">
+				Показать еще
+				<svg width="32" height="32"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle"></use></svg>
+			</button>
 		<?php endif; ?>
 	</div>
 </section>
