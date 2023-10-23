@@ -88,8 +88,21 @@ function sendForm() {
 			let formData = new FormData(form);
 			const formName = form.name;
 			const fileInput = form.querySelector("input[type=file]");
+			const clientName = form.querySelector("input[name=client_name]");
+			const clientTel = form.querySelector("input[name=client_tel]");
+			const clientEmail = form.querySelector("input[name=client_email]");
+			const clientMessage = form.querySelector("input[name=client_message]");
+
+			if (clientName) formData.append('client_name', clientName.value);
+			if (clientTel) formData.append('client_tel', clientTel.value);
+			if (clientEmail) formData.append('client_email', clientEmail.value);
+			if (clientMessage) formData.append('client_message', clientMessage.value);
+
+			const encodedAuth = window.btoa('1b31cbdd-8d71-4616-85a6-92f5ab1c4f83:63e6ff22-9af0-4781-b338-308e46b14ceb');
 
 			formData.append("action", "send_mail");
+
+			console.log('Basic ' + encodedAuth);
 
 			if (formName) {
 				formData.append("form_name", formName);
@@ -103,26 +116,55 @@ function sendForm() {
 				});
 			}
 
-			const response = fetch(adem_ajax.url, {
+			// const WP_request = fetch(adem_ajax.url, {
+			// 	method: "POST",
+			// 	body: formData,
+			// })
+			// .then((response) => response.text())
+			// .then((data) => {
+			// 	Fancybox.close(true);
+			// 	form.reset();
+			// 	setTimeout(function () {
+			// 		Fancybox.show([
+			// 			{
+			// 				src: "#success",
+			// 				type: "inline",
+			// 			},
+			// 		]);
+			// 	}, 100);
+			// })
+			// .catch((error) => {
+			// 	console.error("Error:", error);
+			// });
+
+			const fitness365 = fetch('https://w.fitness365.ru/api/v1/lead', {
 				method: "POST",
-				body: formData,
+				headers: {
+					'Authorization': 'Basic ' + encodedAuth,
+				},
+				body: {
+					name: formData.get('client_name'),
+					email: formData.get('client_email'),
+					phone: formData.get('client_tel'),
+					message: formData.get('client_message')
+				}
 			})
-				.then((response) => response.text())
-				.then((data) => {
-					Fancybox.close(true);
-					form.reset();
-					setTimeout(function () {
-						Fancybox.show([
-							{
-								src: "#success",
-								type: "inline",
-							},
-						]);
-					}, 100);
-				})
-				.catch((error) => {
-					console.error("Error:", error);
-				});
+			.then((response) => response.text())
+			// .then((data) => {
+			// 	Fancybox.close(true);
+			// 	form.reset();
+			// 	setTimeout(function () {
+			// 		Fancybox.show([
+			// 			{
+			// 				src: "#success",
+			// 				type: "inline",
+			// 			},
+			// 		]);
+			// 	}, 100);
+			// })
+			.catch((error) => {
+				console.error("Error:", error);
+			});
 		});
 	});
 }
