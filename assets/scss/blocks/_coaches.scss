@@ -22,6 +22,10 @@
 			position: relative;
 			padding: 95px 0 70px;
 
+			@include hg {
+				padding: 50px 0 70px;
+			}
+
 			@include xs {
 				padding: 0 0 30px;
 			}

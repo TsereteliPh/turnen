@@ -1,31 +1,37 @@
 <section class="price" id="price">
 	<div class="container">
-        <?php get_template_part('/layouts/partials/title', null, array(
-            'class' => 'price__title',
-            'title' => get_sub_field('title')
-        )); ?>
+        <?php
+			get_template_part('/layouts/partials/title', null, array(
+				'class' => 'price__title',
+				'title' => get_sub_field('title')
+			));
 
-		<div class="price__label">
-			Стоимость тренировок:<br>
-			групповые и персональные тренировки
-		</div>
+			$afterTitle = get_sub_field( 'after_title' );
+			if ( $afterTitle ) :
+		?>
+			<div class="price__label"><?php echo $afterTitle; ?></div>
+		<?php endif; ?>
 
 		<?php
 			$price = get_sub_field( 'price' );
 			if ( $price ) :
 		?>
-			<ul class="reset-list price__list">
+			<ul class="reset-list price__list<?php echo ( !$afterTitle ) ? ' price__list--indent' : ''; ?>">
 				<?php foreach ( $price as $item ) : ?>
 					<li class="price__item">
-						<button class="price__item-btn<?php echo ( $item['desc'] ) ? ' js-accordion-btn' : ''; ?>" type="button">
-							<svg width="32" height="32" class="price__item-arrow"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle"></use></svg>
+						<button class="price__item-btn<?php echo ( $item['desc'] && get_sub_field( 'accordion' ) ) ? ' js-accordion-btn' : ''; ?>" type="button">
+							<svg width="32" height="32" class="price__item-arrow<?php echo ( $item['desc'] ) ? ' price__item-arrow--rotate' : ''; ?>"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle"></use></svg>
 
 							<div class="price__item-label"><?php echo $item['label']; ?></div>
 
-							<div class="price__item-value"><?php echo number_format($item['value'], 0, ',', ' '); ?> р.</div>
+							<?php if ( $item['value'] ) : ?>
+								<div class="price__item-value"><?php echo number_format($item['value'], 0, ',', ' '); ?> р.</div>
+							<?php endif; ?>
 						</button>
 
-						<div class="price__item-desc"><?php echo $item['desc']; ?></div>
+						<?php if ( $item['desc'] ) : ?>
+							<div class="price__item-desc"><?php echo $item['desc']; ?></div>
+						<?php endif; ?>
 					</li>
 				<?php endforeach; ?>
 			</ul>
