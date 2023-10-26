@@ -14,6 +14,7 @@ if (have_rows('blocks', $id)) {
 		}
 
 		if (get_row_layout() == 'album') get_template_part('layouts/blocks/album/template');
+		else if (get_row_layout() == 'coaches-list') get_template_part('layouts/blocks/coaches-list/template');
 		else if (get_row_layout() == 'coaches') get_template_part('layouts/blocks/coaches/template');
 		else if (get_row_layout() == 'contacts') get_template_part('layouts/blocks/contacts/template');
 		else if (get_row_layout() == 'main-gallery') get_template_part('layouts/blocks/main-gallery/template', null, array('block_id' => $counters[$layout]));
