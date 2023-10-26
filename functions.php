@@ -62,6 +62,14 @@ if (!function_exists('adem_setup')) {
 
 add_action('after_setup_theme', 'adem_setup');
 
+//disable archive pages
+add_action( 'parse_query', function ( $query ) {
+    if( is_date() || is_category() || is_tag() || is_author() ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+});
+
 // Return classic widgets
 add_filter('gutenberg_use_widgets_block_editor', '__return_false');
 add_filter('use_widgets_block_editor', '__return_false');
