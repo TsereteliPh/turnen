@@ -17,7 +17,7 @@
 			'menu_class' => 'reset-list footer__menu'
 		)); ?>
 
-		<a href="#map" class="footer__map">
+		<a href="<?php echo ( !is_front_page() ) ? bloginfo( 'url' ) . '#map' : '/#map'; ?>" class="footer__map">
 			<span>
 				<svg width="18" height="22"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-marker"></use></svg>
 			</span>
