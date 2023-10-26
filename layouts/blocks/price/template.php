@@ -14,9 +14,10 @@
 
 		<?php
 			$price = get_sub_field( 'price' );
+			$columns = get_sub_field( 'columns' );
 			if ( $price ) :
 		?>
-			<ul class="reset-list price__list<?php echo ( !$afterTitle ) ? ' price__list--indent' : ''; ?>">
+			<ul class="reset-list price__list<?php echo ( !$afterTitle ) ? ' price__list--indent' : ''; echo ( $columns == 'two' ) ? ' price__list--grid' : ''; ?>">
 				<?php foreach ( $price as $item ) : ?>
 					<li class="price__item">
 						<button class="price__item-btn<?php echo ( $item['desc'] && get_sub_field( 'accordion' ) ) ? ' js-accordion-btn' : ''; ?>" type="button">

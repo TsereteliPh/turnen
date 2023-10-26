@@ -117,7 +117,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -127,6 +127,30 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 			'ui' => 1,
 			'style' => '',
+			'acfe_field_group_condition' => 0,
+		),
+		array(
+			'key' => 'field_653a3fb8486bb',
+			'label' => 'Количество столбцов',
+			'name' => 'columns',
+			'aria-label' => '',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'one' => '1',
+				'two' => '2',
+			),
+			'default_value' => '',
+			'return_format' => 'value',
+			'allow_null' => 0,
+			'layout' => 'horizontal',
 			'acfe_field_group_condition' => 0,
 		),
 		array(
@@ -250,7 +274,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1698154573,
+	'modified' => 1698317111,
 ));
 
 endif;
