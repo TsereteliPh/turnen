@@ -28,27 +28,6 @@ acf_add_local_field_group(array(
 			'acfe_field_group_condition' => 0,
 		),
 		array(
-			'key' => 'field_65084dc121349',
-			'label' => 'Маркер на карте',
-			'name' => 'map',
-			'aria-label' => '',
-			'type' => 'yandex-map',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'height' => 400,
-			'map_type' => 'map',
-			'zoom' => 12,
-			'center_lat' => '55.75399399999374',
-			'center_lng' => '37.62209300000001',
-			'acfe_field_group_condition' => 0,
-		),
-		array(
 			'key' => 'field_65084f0cc2fe1',
 			'label' => 'Телефон для связи',
 			'name' => 'phone',
@@ -342,7 +321,7 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1695714482,
+	'modified' => 1698316022,
 ));
 
 endif;
