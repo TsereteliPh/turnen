@@ -30,7 +30,7 @@
 		font-size: 12px;
 	}
 
-	@media (hover: hover) {
+	@include mouse {
 
 		&:hover {
 
@@ -184,7 +184,7 @@
 .btn-prev {
 	left: 0;
 
-	@media (hover: hover) {
+	@include mouse {
 
 		&:hover {
 
@@ -198,7 +198,7 @@
 .btn-next {
 	right: 0;
 
-	@media (hover: hover) {
+	@include mouse {
 
 		&:hover {
 

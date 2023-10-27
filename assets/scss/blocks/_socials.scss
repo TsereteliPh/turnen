@@ -22,7 +22,7 @@
 			height: 30px;
 		}
 
-		@media (hover: hover) {
+		@include mouse {
 
 			&:hover {
 				transform: translateY(-5px);

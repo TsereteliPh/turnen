@@ -70,7 +70,7 @@
 			grid-row: 1/4;
 		}
 
-		@media (hover: hover) {
+		@include mouse {
 
 			&:hover {
 				scale: 1.05;

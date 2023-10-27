@@ -146,7 +146,7 @@
 			font-size: 30px;
 		}
 
-		@media (hover: hover) {
+		@include mouse {
 
 			&:hover {
 				color: var(--secondary);

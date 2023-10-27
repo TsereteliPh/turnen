@@ -84,7 +84,7 @@
 			font-size: 16px;
 		}
 
-		@media (hover: hover) {
+		@include mouse {
 
 			&:hover {
 				box-shadow: 0 5px 5px rgba(#000, 0.1);

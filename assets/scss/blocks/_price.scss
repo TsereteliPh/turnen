@@ -114,7 +114,7 @@
 				transform: none;
 			}
 
-			@media (hover: hover) {
+			@include mouse {
 
 				&:hover {
 
