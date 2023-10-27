@@ -20,15 +20,11 @@
 		display: flex;
 		gap: 15px;
 		align-items: center;
-		font-size: 20px;
+		font-size: 16px;
 		font-family: var(--font-secondary);
 
 		@include md {
 			gap: 18px;
-		}
-
-		@include sm {
-			font-size: 16px;
 		}
 
 		@include xs {
