@@ -44,6 +44,15 @@
 				flex-direction: column;
 				gap: 20px;
 			}
+
+			.price__item {
+
+				&:nth-child(even) {
+					@include xs {
+						order: 1;
+					}
+				}
+			}
 		}
 
 		&--indent {
@@ -82,12 +91,6 @@
 
 		@include xs {
 			padding: 15px 10px;
-		}
-
-		&:nth-child(even) {
-			@include xs {
-				order: 1;
-			}
 		}
 	}
 
