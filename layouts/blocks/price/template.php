@@ -18,7 +18,10 @@
 			if ( $price ) :
 		?>
 			<ul class="reset-list price__list<?php echo ( !$afterTitle ) ? ' price__list--indent' : ''; echo ( $columns == 'two' ) ? ' price__list--grid' : ''; ?>">
-				<?php foreach ( $price as $item ) : ?>
+				<?php
+					if ( $columns != 'two' ) $price = array_reverse( $price );
+					foreach ( $price as $item ) :
+				?>
 					<li class="price__item">
 						<button class="price__item-btn<?php echo ( $item['desc'] && get_sub_field( 'accordion' ) ) ? ' js-accordion-btn' : ''; ?>" type="button">
 							<svg width="32" height="32" class="price__item-arrow<?php echo ( $item['desc'] ) ? ' price__item-arrow--rotate' : ''; ?>"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle"></use></svg>
