@@ -4,7 +4,7 @@
 		<svg width="60" height="60"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-arrow-circle--yellow"></use></svg>
 	</div>
 
-	<video class="welcome__video" src="<?php echo get_template_directory_uri(); ?>/assets/videos/welcome-video.mp4" type="video/mp4" autoplay muted loop playsinline></video>
+	<video class="welcome__video" src="<?php echo get_template_directory_uri(); ?>/assets/videos/welcome-video.mp4" type="video/mp4" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri(); ?>/assets/images/welcome-bg.jpg"></video>
 
 	<div class="container welcome__container">
 		<div class="st-hypten welcome__desc"><?php echo $welcome['desc']; ?></div>

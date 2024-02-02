@@ -104,8 +104,6 @@ function sendForm() {
 
 			formData.append("action", "send_mail");
 
-			console.log(fitness365User);
-
 			if (formName) {
 				formData.append("form_name", formName);
 			} else {
@@ -123,6 +121,9 @@ function sendForm() {
 				body: formData,
 			})
 			.then((response) => response.text())
+			.then((data) => {
+				if (typeof (ym) === 'function') ym(68966470,'reachGoal','form232474350');
+			})
 			.catch((error) => {
 				console.error("Error:", error);
 			});
