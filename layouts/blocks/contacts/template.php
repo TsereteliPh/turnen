@@ -71,7 +71,7 @@
 		</div>
 
 		<div class="modal contacts__form">
-			<h3 class="modal__title">Приходите к нам</h3>
+			<div class="modal__title">Приходите к нам</div>
 
 			<?php if ( get_sub_field( 'text' ) ) : ?>
 				<div class="modal__text"><?php the_sub_field( 'text' ); ?></div>

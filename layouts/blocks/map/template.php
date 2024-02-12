@@ -1,9 +1,9 @@
 <section class="map" id="map">
 	<div class="container map__container">
 		<div class="map__label">
-			<h2 class="map__title"><?php the_sub_field( 'title' ); ?></h2>
+			<div class="map__before-title"><?php the_sub_field( 'text' ); ?></div>
 
-			<div class="map__mall"><?php the_sub_field( 'text' ); ?></div>
+			<h2 class="map__title"><?php the_sub_field( 'title' ); ?></h2>
 		</div>
 
 		<address class="map__address">
