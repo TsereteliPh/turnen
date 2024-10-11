@@ -17,14 +17,20 @@
 			'menu_class' => 'reset-list footer__menu'
 		)); ?>
 
-		<a href="<?php echo ( !is_front_page() ) ? bloginfo( 'url' ) . '/#map' : '#map'; ?>" class="footer__map">
-			<span>
-				<svg width="18" height="22"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-marker"></use></svg>
-			</span>
-			Открыть карту проезда
-		</a>
+		<div class="footer__box">
+			<?php if ( get_field( 'footer_text', 'options' ) ) : ?>
+				<div class="footer__text"><?php echo get_field( 'footer_text', 'options' ); ?></div>
+			<?php endif; ?>
 
-		<div class="footer__rights">© All Right Reserved. Turnen. <?php echo date( 'Y' ); ?></div>
+			<a href="<?php echo ( !is_front_page() ) ? bloginfo( 'url' ) . '/#map' : '#map'; ?>" class="footer__map">
+				<span>
+					<svg width="18" height="22"><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#icon-marker"></use></svg>
+				</span>
+				Открыть карту проезда
+			</a>
+
+			<div class="footer__rights">© All Right Reserved. Turnen. <?php echo date( 'Y' ); ?></div>
+		</div>
 	</div>
 </footer>
 
