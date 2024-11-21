@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/logo-main.png" type="image/x-icon">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/logo-main--alternative.png" type="image/x-icon">
 	<?php wp_head(); ?>
 </head>
 
@@ -18,7 +18,6 @@
 			<a href="<?php echo bloginfo( 'url' ); ?>" class="header__logo" aria-label="Логотип школы"></a>
 
 			<div class="header__separator"></div>
-
 
 			<?php
 				$blocks = get_field( 'blocks', 2 );
@@ -110,7 +109,6 @@
 					?>
 				</ul>
 			<?php endif; ?>
-
 
 			<div class="header__drop-info">
 				<a href="<?php echo ( !is_front_page() ) ? bloginfo( 'url' ) . '/#map' : '#map'; ?>" class="header__map">
